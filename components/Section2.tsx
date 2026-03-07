@@ -342,15 +342,46 @@ export default function Section2() {
               <div
                 key={a.type}
                 className="card p-6"
-                style={{ borderColor: `${a.color}30` }}
+                onClick={() => setActiveAffordance(i)}
+                style={{ 
+                  borderColor: activeAffordance === i ? `${a.color}60` : `${a.color}30`,
+                  background: activeAffordance === i ? `${a.color}08` : "transparent",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  transform: activeAffordance === i ? "translateY(-4px)" : "translateY(0)",
+                }}
               >
-                <h4 style={{ fontFamily: "Syne", fontSize: "1.1rem", fontWeight: 700, color: a.color, marginBottom: 10 }}>
-                  {a.type}
-                </h4>
-                <p style={{ color: "#A0A0C0", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: 12 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+                  <div style={{ 
+                    width: 8, 
+                    height: 8, 
+                    borderRadius: "50%", 
+                    background: a.color,
+                    boxShadow: activeAffordance === i ? `0 0 12px ${a.color}80` : "none",
+                    transition: "all 0.3s ease",
+                  }} />
+                  <h4 style={{ fontFamily: "Syne", fontSize: "1.1rem", fontWeight: 700, color: activeAffordance === i ? a.color : "#A0A0C0", transition: "color 0.3s" }}>
+                    {a.type}
+                  </h4>
+                </div>
+                <p style={{ 
+                  color: activeAffordance === i ? "#F0F0FF" : "#A0A0C0", 
+                  fontSize: "0.85rem", 
+                  lineHeight: 1.6, 
+                  marginBottom: 12,
+                  transition: "color 0.3s",
+                }}>
                   {a.desc}
                 </p>
-                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                <div style={{ 
+                  display: "flex", 
+                  flexDirection: "column", 
+                  gap: 6,
+                  maxHeight: activeAffordance === i ? "500px" : "0",
+                  opacity: activeAffordance === i ? 1 : 0,
+                  overflow: "hidden",
+                  transition: "all 0.4s ease",
+                }}>
                   {a.examples.map((ex) => (
                     <div
                       key={ex}
@@ -367,6 +398,17 @@ export default function Section2() {
                     </div>
                   ))}
                 </div>
+                {activeAffordance !== i && (
+                  <div style={{ 
+                    fontSize: "0.7rem", 
+                    color: a.color, 
+                    fontFamily: "JetBrains Mono",
+                    marginTop: 8,
+                    opacity: 0.6,
+                  }}>
+                    Click para ver ejemplos →
+                  </div>
+                )}
               </div>
             ))}
           </div>
