@@ -238,7 +238,7 @@ export default function Section2() {
           <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 20 }}>
             Las 10 Heurísticas de Nielsen — Aplicadas al Móvil
           </h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 0, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)" }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-0" style={{ borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)" }}>
             {/* List */}
             <div style={{ background: "#12121A" }}>
               {heuristics.map((h, i) => (
@@ -281,12 +281,13 @@ export default function Section2() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
+                minHeight: 280,
               }}
             >
               <div
                 style={{
                   fontFamily: "Syne",
-                  fontSize: "3rem",
+                  fontSize: "clamp(2rem, 5vw, 3rem)",
                   fontWeight: 800,
                   color: heuristics[activeHeuristic].color,
                   opacity: 0.2,
@@ -299,7 +300,7 @@ export default function Section2() {
               <h4
                 style={{
                   fontFamily: "Syne",
-                  fontSize: "1.3rem",
+                  fontSize: "clamp(1.1rem, 3vw, 1.3rem)",
                   fontWeight: 700,
                   color: heuristics[activeHeuristic].color,
                   marginBottom: 12,
@@ -307,7 +308,7 @@ export default function Section2() {
               >
                 {heuristics[activeHeuristic].title}
               </h4>
-              <p style={{ color: "#A0A0C0", lineHeight: 1.7, marginBottom: 20, fontSize: "0.95rem" }}>
+              <p style={{ color: "#A0A0C0", lineHeight: 1.7, marginBottom: 20, fontSize: "clamp(0.85rem, 2vw, 0.95rem)" }}>
                 {heuristics[activeHeuristic].desc}
               </p>
               <div
@@ -317,8 +318,9 @@ export default function Section2() {
                   borderRadius: 10,
                   padding: "12px 16px",
                   fontFamily: "JetBrains Mono",
-                  fontSize: "0.8rem",
+                  fontSize: "clamp(0.7rem, 1.5vw, 0.8rem)",
                   color: heuristics[activeHeuristic].color,
+                  wordBreak: "break-word",
                 }}
               >
                 {heuristics[activeHeuristic].example}
