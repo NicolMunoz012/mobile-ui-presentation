@@ -143,6 +143,51 @@ const accessibility = [
   { icon: "♿", label: "Zona del pulgar", value: "Diseño para uso\ncon una mano", color: "#f59e0b" },
 ];
 
+const ariaExamples = [
+  {
+    title: "aria-label",
+    correct: '<button aria-label="Cerrar menú">\n  <CloseIcon />\n</button>',
+    incorrect: '<button>\n  <CloseIcon />\n</button>',
+    explanation: "Los botones con solo iconos necesitan aria-label para lectores de pantalla.",
+    color: "#10b981",
+  },
+  {
+    title: "Orden de foco",
+    correct: '<div>\n  <input tabIndex={1} />\n  <button tabIndex={2}>Enviar</button>\n  <a tabIndex={3}>Cancelar</a>\n</div>',
+    incorrect: '<div>\n  <button tabIndex={3}>Enviar</button>\n  <input tabIndex={1} />\n  <a tabIndex={2}>Cancelar</a>\n</div>',
+    explanation: "El orden visual debe coincidir con el orden de foco (tabIndex).",
+    color: "#06b6d4",
+  },
+  {
+    title: "aria-live",
+    correct: '<div aria-live="polite" aria-atomic="true">\n  {mensaje}\n</div>',
+    incorrect: '<div>\n  {mensaje}\n</div>',
+    explanation: "aria-live anuncia cambios dinámicos sin mover el foco del usuario.",
+    color: "#8b5cf6",
+  },
+];
+
+const screenReaderBestPractices = [
+  {
+    practice: "Roles semánticos",
+    code: '<nav role="navigation">\n  <button role="button">\n  <main role="main">',
+    desc: "Usa roles ARIA para definir la función de cada elemento.",
+    color: "#6366f1",
+  },
+  {
+    practice: "Alt text descriptivo",
+    code: '<img alt="Usuario sonriendo con laptop" />\n// NO: alt="imagen123.jpg"',
+    desc: "Describe el contenido, no el nombre del archivo.",
+    color: "#8b5cf6",
+  },
+  {
+    practice: "Estados de componentes",
+    code: '<button aria-pressed="true">\n<input aria-invalid="true">\n<div aria-expanded="false">',
+    desc: "Comunica el estado actual de elementos interactivos.",
+    color: "#10b981",
+  },
+];
+
 const inclusiveDesign = [
   {
     principle: "Modelo de Exclusión",
@@ -173,6 +218,7 @@ const inclusiveDesign = [
 export default function Section2() {
   const [activeHeuristic, setActiveHeuristic] = useState(0);
   const [activeAffordance, setActiveAffordance] = useState(0);
+  const [activeAriaExample, setActiveAriaExample] = useState(0);
   const ref = useReveal();
   const ref2 = useReveal();
   const ref3 = useReveal();
@@ -180,6 +226,7 @@ export default function Section2() {
   const ref5 = useReveal();
   const ref6 = useReveal();
   const ref7 = useReveal();
+  const ref8 = useReveal();
 
   return (
     <section id="usabilidad" className="relative py-32 overflow-hidden" style={{ background: "#0D0D14" }}>
@@ -513,7 +560,7 @@ export default function Section2() {
           </div>
 
           {/* WCAG levels */}
-          <div className="card p-6">
+          <div className="card p-6 mb-10">
             <h4 style={{ fontFamily: "Syne", fontWeight: 700, marginBottom: 16 }}>
               Niveles de Conformidad WCAG 2.1
             </h4>
@@ -549,6 +596,137 @@ export default function Section2() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* ARIA Examples - Interactive */}
+          <div ref={ref8}>
+            <h4 style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "1.2rem", marginBottom: 16 }}>
+              Ejemplos de Implementación ARIA
+            </h4>
+            
+            {/* Selector tabs */}
+            <div style={{ display: "flex", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
+              {ariaExamples.map((ex, i) => (
+                <button
+                  key={ex.title}
+                  onClick={() => setActiveAriaExample(i)}
+                  style={{
+                    padding: "8px 16px",
+                    borderRadius: 8,
+                    border: `1px solid ${activeAriaExample === i ? ex.color : "rgba(255,255,255,0.08)"}`,
+                    background: activeAriaExample === i ? `${ex.color}15` : "transparent",
+                    color: activeAriaExample === i ? ex.color : "#6B6B8A",
+                    fontFamily: "JetBrains Mono",
+                    fontSize: "0.75rem",
+                    cursor: "pointer",
+                    transition: "all 0.2s",
+                    fontWeight: activeAriaExample === i ? 600 : 400,
+                  }}
+                >
+                  {ex.title}
+                </button>
+              ))}
+            </div>
+
+            {/* Code comparison */}
+            <div className="card p-6" style={{ borderColor: `${ariaExamples[activeAriaExample].color}30` }}>
+              <p style={{ color: "#A0A0C0", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: 16 }}>
+                {ariaExamples[activeAriaExample].explanation}
+              </p>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                {/* Incorrect */}
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                    <span style={{ fontSize: "1.2rem" }}>❌</span>
+                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "0.75rem", color: "#f43f5e", fontWeight: 600 }}>
+                      Incorrecto
+                    </span>
+                  </div>
+                  <pre
+                    style={{
+                      background: "rgba(244,63,94,0.08)",
+                      border: "1px solid rgba(244,63,94,0.2)",
+                      borderRadius: 8,
+                      padding: "12px",
+                      fontSize: "0.7rem",
+                      color: "#f43f5e",
+                      fontFamily: "JetBrains Mono",
+                      lineHeight: 1.6,
+                      overflow: "auto",
+                      margin: 0,
+                    }}
+                  >
+                    {ariaExamples[activeAriaExample].incorrect}
+                  </pre>
+                </div>
+
+                {/* Correct */}
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                    <span style={{ fontSize: "1.2rem" }}>✅</span>
+                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "0.75rem", color: "#10b981", fontWeight: 600 }}>
+                      Correcto
+                    </span>
+                  </div>
+                  <pre
+                    style={{
+                      background: "rgba(16,185,129,0.08)",
+                      border: "1px solid rgba(16,185,129,0.2)",
+                      borderRadius: 8,
+                      padding: "12px",
+                      fontSize: "0.7rem",
+                      color: "#10b981",
+                      fontFamily: "JetBrains Mono",
+                      lineHeight: 1.6,
+                      overflow: "auto",
+                      margin: 0,
+                    }}
+                  >
+                    {ariaExamples[activeAriaExample].correct}
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            {/* Best Practices */}
+            <div style={{ marginTop: 16 }}>
+              <h4 style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "1.1rem", marginBottom: 12, color: "#F0F0FF" }}>
+                Buenas Prácticas para Lectores de Pantalla
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {screenReaderBestPractices.map((bp) => (
+                  <div
+                    key={bp.practice}
+                    className="card p-5"
+                    style={{ borderColor: `${bp.color}25` }}
+                  >
+                    <div style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "0.9rem", color: bp.color, marginBottom: 8 }}>
+                      {bp.practice}
+                    </div>
+                    <pre
+                      style={{
+                        background: `${bp.color}08`,
+                        border: `1px solid ${bp.color}15`,
+                        borderRadius: 6,
+                        padding: "8px",
+                        fontSize: "0.65rem",
+                        color: bp.color,
+                        fontFamily: "JetBrains Mono",
+                        lineHeight: 1.5,
+                        overflow: "auto",
+                        marginBottom: 8,
+                        margin: 0,
+                      }}
+                    >
+                      {bp.code}
+                    </pre>
+                    <p style={{ color: "#6B6B8A", fontSize: "0.75rem", lineHeight: 1.5 }}>
+                      {bp.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
