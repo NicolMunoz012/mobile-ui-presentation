@@ -12,12 +12,33 @@ const sections = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      setScrolled(currentScrollY > 40);
+      
+      // Siempre visible en el top
+      if (currentScrollY < 10) {
+        setVisible(true);
+      } else {
+        // Ocultar al bajar, mostrar al subir
+        if (currentScrollY > lastScrollY) {
+          setVisible(false);
+        } else {
+          setVisible(true);
+        }
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -33,6 +54,8 @@ export default function Navbar() {
           : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
         borderBottom: scrolled ? "1px solid rgba(99,102,241,0.15)" : "none",
+        transform: visible ? "translateY(0)" : "translateY(-100%)",
+        transition: "transform 0.4s ease, background 0.5s, backdrop-filter 0.5s",
       }}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -46,7 +69,7 @@ export default function Navbar() {
           </div>
           <span
             className="text-sm font-semibold"
-            style={{ fontFamily: "Syne, sans-serif", color: "#F0F0FF" }}
+            style={{ fontFamily: "Cabinet Grotesk, sans-serif", color: "#F0F0FF" }}
           >
             Mobile Design
           </span>
@@ -60,7 +83,7 @@ export default function Navbar() {
               onClick={() => scrollTo(s.id)}
               className="px-4 py-2 rounded-full text-xs font-medium transition-all duration-200"
               style={{
-                fontFamily: "JetBrains Mono, monospace",
+                fontFamily: "Fira Code, monospace",
                 color: active === s.id ? "#6366f1" : "#6B6B8A",
                 background: active === s.id ? "rgba(99,102,241,0.1)" : "transparent",
                 letterSpacing: "0.05em",

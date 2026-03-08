@@ -2,10 +2,9 @@
 import { useReveal } from "@/hooks/useReveal";
 
 const timeline = [
-  { year: "2007", event: "iPhone lanza la era táctil", color: "#6366f1" },
-  { year: "2008", event: "App Store — ecosistema de apps", color: "#8b5cf6" },
-  { year: "2011", event: "Responsive Design se populariza", color: "#06b6d4" },
-  { year: "2014", event: "Material Design de Google", color: "#10b981" },
+  { year: "2007", event: "iPhone lanza touch UI", color: "#6366f1" },
+  { year: "2008", event: "App Store crea ecosistema", color: "#8b5cf6" },
+  { year: "2014", event: "Material Design estandariza diseño móvil", color: "#10b981" },
   { year: "2019", event: "Dark mode como estándar", color: "#f59e0b" },
   { year: "2024", event: "Diseño adaptativo con IA", color: "#f43f5e" },
 ];
@@ -13,33 +12,27 @@ const timeline = [
 const differences = [
   {
     aspect: "Pantalla",
-    web: "Grande, mouse y teclado",
-    mobile: "Pequeña, táctil con dedos",
+    web: "Grande, espacio abundante",
+    mobile: "Pequeña → priorizar contenido",
     icon: "🖥️",
+  },
+  {
+    aspect: "Interacción",
+    web: "Mouse, precisión pixel",
+    mobile: "Dedos → área táctil mínima 44pt",
+    icon: "👆",
   },
   {
     aspect: "Contexto de uso",
     web: "Escritorio, estático",
-    mobile: "En movimiento, multitarea",
+    mobile: "En movimiento → sesiones cortas",
     icon: "🏃",
   },
   {
     aspect: "Conectividad",
     web: "Conexión estable",
-    mobile: "Variable, offline posible",
-    icon: "📶",
-  },
-  {
-    aspect: "Interacción",
-    web: "Click, hover, scroll",
-    mobile: "Tap, swipe, pinch, shake",
-    icon: "👆",
-  },
-  {
-    aspect: "Atención",
-    web: "Sesiones largas",
-    mobile: "Sesiones cortas e intensas",
-    icon: "⏱️",
+    mobile: "Variable → diseñar para offline",
+    icon: "�",
   },
 ];
 
@@ -90,18 +83,18 @@ export default function Section1() {
             <span className="gradient-text-indigo">Diseño Móvil</span>
           </h2>
           <p style={{ color: "#6B6B8A", fontSize: "1.1rem", maxWidth: 560, lineHeight: 1.7 }}>
-            Qué es UI/UX móvil, su evolución histórica y por qué importa más que nunca
-            en un mundo donde el 92% del tiempo digital ocurre en apps.
+            UI/UX móvil, diferencias con web, evolución histórica y por qué el diseño
+            decide si una app se usa o se desinstala.
           </p>
         </div>
 
         {/* Stats */}
         <div ref={ref2} className="reveal grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
           {[
-            { value: "6.8B", label: "Usuarios móviles en 2024", color: "#6366f1" },
+            { value: "6.8B", label: "Usuarios móviles globales", color: "#6366f1" },
             { value: "92%", label: "Tiempo digital en apps", color: "#8b5cf6" },
-            { value: "3.8M", label: "Apps en tiendas globales", color: "#06b6d4" },
-            { value: "88%", label: "Usuarios no vuelven tras mala UX", color: "#f43f5e" },
+            { value: "3.8M", label: "Apps en tiendas", color: "#06b6d4" },
+            { value: "88%", label: "No vuelven tras mala experiencia", color: "#f43f5e" },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -150,9 +143,9 @@ export default function Section1() {
               UI — User Interface
             </h3>
             <p style={{ color: "#6B6B8A", lineHeight: 1.7, fontSize: "0.95rem" }}>
-              Es el <strong style={{ color: "#F0F0FF" }}>aspecto visual e interactivo</strong> de una app.
-              Incluye colores, tipografías, botones, iconos y todos los elementos con los que el usuario
-              tiene contacto visual. Es la "piel" del producto.
+              Es el <strong style={{ color: "#F0F0FF" }}>aspecto visual</strong> de una app.
+              Incluye colores, botones, tipografía y todos los elementos visuales.
+              Es lo que el usuario ve y toca.
             </p>
             <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 6 }}>
               {["Colores", "Tipografía", "Iconos", "Botones", "Layouts"].map((t) => (
@@ -178,9 +171,9 @@ export default function Section1() {
               UX — User Experience
             </h3>
             <p style={{ color: "#6B6B8A", lineHeight: 1.7, fontSize: "0.95rem" }}>
-              Es la <strong style={{ color: "#F0F0FF" }}>experiencia completa</strong> del usuario al
-              interactuar con el producto. Abarca investigación, flujos, arquitectura de información
-              y cómo el usuario se <em>siente</em> usando la app.
+              Es la <strong style={{ color: "#F0F0FF" }}>experiencia completa</strong> del usuario.
+              Incluye flujos, emociones, usabilidad y cómo se <em>siente</em> al usar la app.
+              UI y UX son complementarios.
             </p>
             <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 6 }}>
               {["Flujos", "Research", "Wireframes", "Testing", "Empatía"].map((t) => (
@@ -195,7 +188,7 @@ export default function Section1() {
         {/* Timeline */}
         <div>
           <h3 style={{ fontFamily: "Syne", fontSize: "1.5rem", fontWeight: 700, marginBottom: 24 }}>
-            Evolución histórica
+            Timeline histórico
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
             {timeline.map((item, i) => (
