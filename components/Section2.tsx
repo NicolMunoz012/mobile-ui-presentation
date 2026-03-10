@@ -282,7 +282,7 @@ export default function Section2() {
 
         {/* Interactive heuristics */}
         <div ref={ref2} className="reveal mb-20">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 20 }}>
+          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 20, color: "var(--text)" }}>
             Las 10 Heurísticas de Nielsen — Aplicadas al Móvil
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-0" style={{ borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)" }}>
@@ -379,7 +379,7 @@ export default function Section2() {
 
         {/* Affordance */}
         <div ref={ref3} className="reveal mb-20">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8 }}>
+          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8, color: "var(--text)" }}>
             Affordance
           </h3>
           <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
@@ -464,7 +464,7 @@ export default function Section2() {
 
         {/* Feedback */}
         <div ref={ref4} className="reveal mb-20">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8 }}>
+          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8, color: "var(--text)" }}>
             Feedback
           </h3>
           <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
@@ -509,7 +509,7 @@ export default function Section2() {
 
         {/* Consistencia */}
         <div ref={ref5} className="reveal mb-20">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8 }}>
+          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8, color: "var(--text)" }}>
             Consistencia
           </h3>
           <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
@@ -535,7 +535,7 @@ export default function Section2() {
 
         {/* Accessibility */}
         <div ref={ref6} className="reveal mb-20">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 20 }}>
+          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 20, color: "var(--text)" }}>
             Accesibilidad en Móvil
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
@@ -562,7 +562,7 @@ export default function Section2() {
 
           {/* WCAG levels */}
           <div className="card p-6 mb-10">
-            <h4 style={{ fontFamily: "Syne", fontWeight: 700, marginBottom: 16 }}>
+            <h4 style={{ fontFamily: "Syne", fontWeight: 700, marginBottom: 16, color: "var(--text)" }}>
               Niveles de Conformidad WCAG 2.1
             </h4>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -602,7 +602,7 @@ export default function Section2() {
 
           {/* ARIA Examples - Interactive */}
           <div ref={ref8}>
-            <h4 style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "1.2rem", marginBottom: 16 }}>
+            <h4 style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "1.2rem", marginBottom: 16, color: "var(--text)" }}>
               Ejemplos de Implementación ARIA
             </h4>
             
@@ -692,7 +692,7 @@ export default function Section2() {
 
             {/* Best Practices */}
             <div style={{ marginTop: 16 }}>
-              <h4 style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "1.1rem", marginBottom: 12, color: "#F0F0FF" }}>
+              <h4 style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "1.1rem", marginBottom: 12, color: "var(--text)" }}>
                 Buenas Prácticas para Lectores de Pantalla
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -734,7 +734,7 @@ export default function Section2() {
 
         {/* Diseño Inclusivo */}
         <div ref={ref7} className="reveal">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8 }}>
+          <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8, color: "var(--text)" }}>
             Diseño Inclusivo
           </h3>
           <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>

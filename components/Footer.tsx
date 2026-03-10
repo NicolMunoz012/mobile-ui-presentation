@@ -5,8 +5,8 @@ export default function Footer() {
     <footer
       className="relative py-20 overflow-hidden"
       style={{
-        background: "#08080E",
-        borderTop: "1px solid rgba(99,102,241,0.1)",
+        background: "var(--bg)",
+        borderTop: "1px solid var(--border)",
       }}
     >
       {/* Ambient */}
@@ -32,6 +32,7 @@ export default function Footer() {
               fontWeight: 800,
               marginBottom: 16,
               lineHeight: 1.1,
+              color: "var(--text)",
             }}
           >
             Diseño Móvil que{" "}
@@ -97,7 +98,7 @@ export default function Footer() {
             justifyContent: "space-between",
             alignItems: "center",
             paddingTop: 24,
-            borderTop: "1px solid rgba(255,255,255,0.05)",
+            borderTop: "1px solid var(--border)",
             flexWrap: "wrap",
             gap: 12,
           }}
@@ -109,6 +110,7 @@ export default function Footer() {
                 background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 fontSize: 11, fontWeight: 800, fontFamily: "Syne",
+                color: "white",
               }}
             >
               UI
