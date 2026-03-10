@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-[#0A0A0F] min-h-screen overflow-x-hidden">
+    <main style={{ background: "var(--bg)", minHeight: "100vh", overflowX: "hidden", transition: "background 0.3s ease" }}>
       <Navbar />
       <HeroSection />
       <Section1 />

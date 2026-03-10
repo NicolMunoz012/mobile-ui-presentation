@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const sections = [
   { id: "fundamentos", label: "Fundamentos" },
@@ -10,6 +11,7 @@ const sections = [
 ];
 
 export default function Navbar() {
+  const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
   const [visible, setVisible] = useState(true);
@@ -50,10 +52,12 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
         background: scrolled
-          ? "rgba(10,10,15,0.85)"
+          ? theme === "dark" 
+            ? "rgba(10,10,15,0.85)" 
+            : "rgba(248,249,252,0.85)"
           : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(99,102,241,0.15)" : "none",
+        borderBottom: scrolled ? "1px solid var(--border)" : "none",
         transform: visible ? "translateY(0)" : "translateY(-100%)",
         transition: "transform 0.4s ease, background 0.5s, backdrop-filter 0.5s",
       }}
@@ -69,7 +73,7 @@ export default function Navbar() {
           </div>
           <span
             className="text-sm font-semibold"
-            style={{ fontFamily: "Cabinet Grotesk, sans-serif", color: "#F0F0FF" }}
+            style={{ fontFamily: "Cabinet Grotesk, sans-serif", color: "var(--text)" }}
           >
             Mobile Design
           </span>
@@ -84,7 +88,7 @@ export default function Navbar() {
               className="px-4 py-2 rounded-full text-xs font-medium transition-all duration-200"
               style={{
                 fontFamily: "Fira Code, monospace",
-                color: active === s.id ? "#6366f1" : "#6B6B8A",
+                color: active === s.id ? "#6366f1" : "var(--muted)",
                 background: active === s.id ? "rgba(99,102,241,0.1)" : "transparent",
                 letterSpacing: "0.05em",
               }}
@@ -95,16 +99,41 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Tag */}
-        <div
-          className="badge"
-          style={{
-            background: "rgba(99,102,241,0.1)",
-            border: "1px solid rgba(99,102,241,0.3)",
-            color: "#6366f1",
-          }}
-        >
-          Diseño de Software
+        {/* Theme toggle + Tag */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          {/* Theme toggle button */}
+          <button
+            onClick={toggleTheme}
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: "50%",
+              border: "1px solid var(--border)",
+              background: "var(--surface)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              fontSize: "1.1rem",
+            }}
+            aria-label={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
+            title={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
+          >
+            {theme === "dark" ? "☀️" : "🌙"}
+          </button>
+
+          {/* Tag */}
+          <div
+            className="badge"
+            style={{
+              background: "rgba(99,102,241,0.1)",
+              border: "1px solid rgba(99,102,241,0.3)",
+              color: "#6366f1",
+            }}
+          >
+            Diseño de Software
+          </div>
         </div>
       </div>
     </nav>

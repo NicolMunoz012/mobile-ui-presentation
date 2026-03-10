@@ -229,7 +229,7 @@ export default function Section2() {
   const ref8 = useReveal();
 
   return (
-    <section id="usabilidad" className="relative py-32 overflow-hidden" style={{ background: "#0D0D14" }}>
+    <section id="usabilidad" className="relative py-32 overflow-hidden" style={{ background: "var(--surface)", transition: "background 0.3s ease" }}>
       <div
         style={{
           position: "absolute", top: "50%", left: "-10%",
@@ -274,7 +274,7 @@ export default function Section2() {
               Usabilidad
             </span>
           </h2>
-          <p style={{ color: "#6B6B8A", fontSize: "1.1rem", maxWidth: 560, lineHeight: 1.7 }}>
+          <p style={{ color: "var(--muted)", fontSize: "1.1rem", maxWidth: 560, lineHeight: 1.7 }}>
             Las Heurísticas de Nielsen adaptadas al móvil, accesibilidad e
             inclusividad como pilares fundamentales del buen diseño.
           </p>
@@ -381,7 +381,7 @@ export default function Section2() {
           <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8 }}>
             Affordance
           </h3>
-          <p style={{ color: "#6B6B8A", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
             La affordance es la propiedad percibida de un objeto que sugiere cómo usarlo. En móvil es crítica porque no hay cursor. El diseño visual asume toda la carga.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
