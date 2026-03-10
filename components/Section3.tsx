@@ -65,7 +65,7 @@ export default function Section3() {
             Sistemas de Diseño{" "}
             <span className="gradient-text-cyan">y Guías de Plataforma</span>
           </h2>
-          <p style={{ color: "#6B6B8A", fontSize: "1.1rem", maxWidth: 560, lineHeight: 1.7 }}>
+          <p style={{ color: "var(--muted)", fontSize: "1.1rem", maxWidth: 560, lineHeight: 1.7 }}>
             Material Design vs Human Interface Guidelines, design tokens,
             tipografía móvil y componentes reutilizables.
           </p>
@@ -86,7 +86,7 @@ export default function Section3() {
                   borderRadius: 100,
                   border: `1px solid ${platform === p.key ? p.color : "rgba(255,255,255,0.08)"}`,
                   background: platform === p.key ? `${p.color}15` : "transparent",
-                  color: platform === p.key ? p.color : "#6B6B8A",
+                  color: platform === p.key ? p.color : "var(--muted)",
                   fontFamily: "JetBrains Mono",
                   fontSize: "0.8rem",
                   cursor: "pointer",
@@ -109,7 +109,7 @@ export default function Section3() {
                 borderBottom: "1px solid rgba(255,255,255,0.05)",
               }}
             >
-              <span style={{ fontFamily: "JetBrains Mono", fontWeight: 700, fontSize: "0.75rem", color: "#6B6B8A", textTransform: "uppercase", letterSpacing: "0.1em" }}>Aspecto</span>
+              <span style={{ fontFamily: "JetBrains Mono", fontWeight: 700, fontSize: "0.75rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em" }}>Aspecto</span>
               <span style={{ fontFamily: "JetBrains Mono", fontWeight: 700, fontSize: "0.75rem", color: "#10b981", textTransform: "uppercase", letterSpacing: "0.1em" }}>Material Design</span>
               <span style={{ fontFamily: "JetBrains Mono", fontWeight: 700, fontSize: "0.75rem", color: "#6366f1", textTransform: "uppercase", letterSpacing: "0.1em" }}>Human Interface</span>
             </div>
@@ -126,9 +126,9 @@ export default function Section3() {
                 onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.02)")}
                 onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
               >
-                <span style={{ fontWeight: 600, fontSize: "0.85rem", color: "#A0A0C0" }}>{row.aspect}</span>
-                <span style={{ fontSize: "0.8rem", color: "#6B6B8A", paddingRight: 12, lineHeight: 1.5 }}>{row.material}</span>
-                <span style={{ fontSize: "0.8rem", color: "#6B6B8A", lineHeight: 1.5 }}>{row.hig}</span>
+                <span style={{ fontWeight: 600, fontSize: "0.85rem", color: "var(--text)" }}>{row.aspect}</span>
+                <span style={{ fontSize: "0.8rem", color: "var(--muted)", paddingRight: 12, lineHeight: 1.5 }}>{row.material}</span>
+                <span style={{ fontSize: "0.8rem", color: "var(--muted)", lineHeight: 1.5 }}>{row.hig}</span>
               </div>
             ))}
           </div>
@@ -139,7 +139,7 @@ export default function Section3() {
           <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8 }}>
             Design Tokens
           </h3>
-          <p style={{ color: "#6B6B8A", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
             Variables que almacenan decisiones de diseño (colores, espaciados, tipografías) y se comparten
             entre diseñadores y desarrolladores para garantizar consistencia.
           </p>
@@ -156,7 +156,7 @@ export default function Section3() {
                       className="mono"
                       style={{
                         fontSize: "0.7rem",
-                        color: "#6B6B8A",
+                        color: "var(--muted)",
                         background: `${t.color}08`,
                         padding: "4px 8px",
                         borderRadius: 4,
@@ -193,7 +193,7 @@ export default function Section3() {
                   borderBottom: i < 4 ? "1px solid rgba(255,255,255,0.04)" : "none",
                 }}
               >
-                <span className="mono" style={{ fontSize: "0.7rem", color: "#6B6B8A", width: 80, flexShrink: 0 }}>
+                <span className="mono" style={{ fontSize: "0.7rem", color: "var(--muted)", width: 80, flexShrink: 0 }}>
                   {type.name}
                 </span>
                 <span
@@ -202,7 +202,7 @@ export default function Section3() {
                     fontSize: type.size.split("/")[0].trim().replace("sp", "px"),
                     fontWeight: parseInt(type.weight),
                     flex: 1,
-                    color: "#F0F0FF",
+                    color: "var(--text)",
                   }}
                 >
                   {type.sample}

@@ -77,7 +77,7 @@ export default function Section4() {
   const bottomTabs = ["🏠", "🔍", "➕", "🔔", "👤"];
 
   return (
-    <section id="navegacion" className="py-28 relative overflow-hidden" style={{background:"#0D0D14"}}>
+    <section id="navegacion" className="py-28 relative overflow-hidden" style={{background:"var(--surface)"}}>
 
       <div className="max-w-6xl mx-auto px-6">
 
@@ -94,11 +94,11 @@ export default function Section4() {
       04 — Navegación
       </span>
 
-      <h2 className="text-4xl font-bold mt-4 mb-4">
+      <h2 className="text-4xl font-bold mt-4 mb-4" style={{ color: "var(--text)" }}>
       Patrones de Navegación Móvil
       </h2>
 
-      <p className="text-gray-400 max-w-xl">
+      <p className="max-w-xl" style={{ color: "var(--muted)" }}>
       Los patrones de navegación definen cómo los usuarios se mueven dentro de una
       aplicación móvil y acceden a sus diferentes secciones.
       </p>
@@ -128,9 +128,9 @@ export default function Section4() {
 
       <div>
 
-      <div className="font-semibold">{p.name}</div>
+      <div className="font-semibold" style={{ color: "var(--text)" }}>{p.name}</div>
 
-      <div className="text-xs text-gray-400">{p.platform}</div>
+      <div className="text-xs" style={{ color: "var(--muted)" }}>{p.platform}</div>
 
       </div>
 
@@ -141,9 +141,9 @@ export default function Section4() {
 
       </div>
 
-      <div className="border border-white/10 rounded-xl p-6">
+      <div className="border rounded-xl p-6" style={{ borderColor: "var(--border)" }}>
 
-      <p className="text-gray-300 mb-6">
+      <p className="mb-6" style={{ color: "var(--text)" }}>
       {navPatterns[activeNav].desc}
       </p>
 
@@ -151,32 +151,32 @@ export default function Section4() {
 
       <div>
 
-      <div className="text-green-400 text-sm mb-2">Ventajas</div>
+      <div className="text-sm mb-2" style={{ color: "#10b981" }}>Ventajas</div>
 
       {navPatterns[activeNav].pros.map(p=>(
-      <div key={p} className="text-gray-400 text-sm">• {p}</div>
+      <div key={p} className="text-sm" style={{ color: "var(--muted)" }}>• {p}</div>
       ))}
 
       </div>
 
       <div>
 
-      <div className="text-red-400 text-sm mb-2">Limitaciones</div>
+      <div className="text-sm mb-2" style={{ color: "#f43f5e" }}>Limitaciones</div>
 
       {navPatterns[activeNav].cons.map(c=>(
-      <div key={c} className="text-gray-400 text-sm">• {c}</div>
+      <div key={c} className="text-sm" style={{ color: "var(--muted)" }}>• {c}</div>
       ))}
 
       </div>
 
       </div>
 
-      <div className="text-gray-400 text-sm mb-2">
-      <strong>Cuándo usar:</strong> {navPatterns[activeNav].use}
+      <div className="text-sm mb-2" style={{ color: "var(--muted)" }}>
+      <strong style={{ color: "var(--text)" }}>Cuándo usar:</strong> {navPatterns[activeNav].use}
       </div>
 
-      <div className="text-gray-400 text-sm">
-      <strong>Apps que lo usan:</strong> {navPatterns[activeNav].apps}
+      <div className="text-sm" style={{ color: "var(--muted)" }}>
+      <strong style={{ color: "var(--text)" }}>Apps que lo usan:</strong> {navPatterns[activeNav].apps}
       </div>
 
       </div>
@@ -187,25 +187,25 @@ export default function Section4() {
 
       <div ref={ref3} className="mb-24">
 
-      <h3 className="text-xl font-bold mb-6">
+      <h3 className="text-xl font-bold mb-6" style={{ color: "var(--text)" }}>
       Demo de navegación móvil
       </h3>
 
-      <div className="phone-screen h-64 border border-white/10 rounded-xl bg-black relative">
+      <div className="phone-screen h-64 border rounded-xl relative" style={{ borderColor: "var(--border)", background: "var(--surface2)" }}>
 
       <div className="p-6 text-center">
 
-      <h4 className="font-semibold text-white">
+      <h4 className="font-semibold" style={{ color: "var(--text)" }}>
       {demoScreens[activeBottomTab].title}
       </h4>
 
-      <p className="text-gray-400 text-sm mt-2">
+      <p className="text-sm mt-2" style={{ color: "var(--muted)" }}>
       {demoScreens[activeBottomTab].text}
       </p>
 
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 flex">
+      <div className="absolute bottom-0 left-0 right-0 border-t flex" style={{ borderColor: "var(--border)" }}>
 
       {bottomTabs.map((icon,i)=>(
       <button
@@ -213,7 +213,7 @@ export default function Section4() {
       onClick={()=>setActiveBottomTab(i)}
       className="flex-1 py-3 text-lg transition active:scale-90"
       style={{
-      color:activeBottomTab===i?navPatterns[activeNav].color:"#6B6B8A"
+      color:activeBottomTab===i?navPatterns[activeNav].color:"var(--muted)"
       }}
       >
       {icon}
@@ -228,7 +228,7 @@ export default function Section4() {
 
       {/* GESTURES */}
 
-      <h3 className="text-xl font-bold mb-6">
+      <h3 className="text-xl font-bold mb-6" style={{ color: "var(--text)" }}>
       Gestos táctiles
       </h3>
 
@@ -236,13 +236,13 @@ export default function Section4() {
 
       {gestures.map(g=>(
       <div key={g.gesture}
-      className="border border-white/10 rounded-lg p-5 text-center">
+      className="border rounded-lg p-5 text-center" style={{ borderColor: "var(--border)" }}>
 
       <div className="text-2xl mb-2">{g.icon}</div>
 
-      <div className="font-semibold">{g.gesture}</div>
+      <div className="font-semibold" style={{ color: "var(--text)" }}>{g.gesture}</div>
 
-      <div className="text-gray-400 text-sm">{g.desc}</div>
+      <div className="text-sm" style={{ color: "var(--muted)" }}>{g.desc}</div>
 
       </div>
       ))}
@@ -251,26 +251,26 @@ export default function Section4() {
 
       {/* SAFE AREAS */}
 
-      <h3 className="text-xl font-bold mb-6">
+      <h3 className="text-xl font-bold mb-6" style={{ color: "var(--text)" }}>
       Safe Areas y Elementos del Sistema
       </h3>
 
-      <div className="border border-white/10 rounded-xl p-8 grid md:grid-cols-2 gap-10 items-center mb-24">
+      <div className="border rounded-xl p-8 grid md:grid-cols-2 gap-10 items-center mb-24" style={{ borderColor: "var(--border)" }}>
 
       <div>
 
-      <p className="text-gray-300 mb-6">
+      <p className="mb-6" style={{ color: "var(--text)" }}>
       Las <strong>safe areas</strong> son zonas donde el contenido de una aplicación
       puede mostrarse sin ser obstruido por elementos físicos o del sistema como
       el notch, barras de estado o el indicador de gestos.
       </p>
 
-      <ul className="space-y-3 text-gray-400 text-sm">
+      <ul className="space-y-3 text-sm" style={{ color: "var(--muted)" }}>
 
-      <li>🟣 <strong>Status Bar</strong> — Información del sistema</li>
-      <li>🟣 <strong>Dynamic Island</strong> — Área de sensores</li>
-      <li>🟢 <strong>Content Area</strong> — Zona segura para contenido</li>
-      <li>🔵 <strong>Home Indicator</strong> — Área de gestos</li>
+      <li>🟣 <strong style={{ color: "var(--text)" }}>Status Bar</strong> — Información del sistema</li>
+      <li>🟣 <strong style={{ color: "var(--text)" }}>Dynamic Island</strong> — Área de sensores</li>
+      <li>🟢 <strong style={{ color: "var(--text)" }}>Content Area</strong> — Zona segura para contenido</li>
+      <li>🔵 <strong style={{ color: "var(--text)" }}>Home Indicator</strong> — Área de gestos</li>
 
       </ul>
 
@@ -280,17 +280,17 @@ export default function Section4() {
 
       <div className="flex justify-center">
 
-      <div className="relative w-40 h-80 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-800 to-slate-900">
+      <div className="relative w-40 h-80 rounded-3xl border" style={{ borderColor: "var(--border)", background: "var(--surface2)" }}>
 
-      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-4 rounded-full bg-black text-[8px] flex items-center justify-center text-purple-400">
+      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-4 rounded-full text-[8px] flex items-center justify-center" style={{ background: "var(--bg)", color: "#8b5cf6" }}>
       Dynamic Island
       </div>
 
-      <div className="absolute top-10 left-3 right-3 bottom-16 border border-dashed border-emerald-400 flex items-center justify-center text-xs text-emerald-400">
+      <div className="absolute top-10 left-3 right-3 bottom-16 border border-dashed flex items-center justify-center text-xs" style={{ borderColor: "#10b981", color: "#10b981" }}>
       Safe Content Area
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-10 h-1 bg-cyan-400 rounded-full animate-pulse"></div>
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-10 h-1 rounded-full animate-pulse" style={{ background: "#06b6d4" }}></div>
 
       </div>
 
@@ -300,29 +300,29 @@ export default function Section4() {
 
       {/* PRINCIPIOS UX */}
 
-<h3 className="text-xl font-bold mb-6">
+<h3 className="text-xl font-bold mb-6" style={{ color: "var(--text)" }}>
 Principios de UX móvil
 </h3>
 
 <div className="grid md:grid-cols-3 gap-6 mb-10">
 
-<div className="border border-white/10 p-6 rounded-lg hover:bg-white/5 hover:scale-[1.03] transition">
-<h4 className="font-semibold mb-2">👍 Thumb Zone</h4>
-<p className="text-gray-400 text-sm">
+<div className="border p-6 rounded-lg hover:scale-[1.03] transition" style={{ borderColor: "var(--border)" }}>
+<h4 className="font-semibold mb-2" style={{ color: "var(--text)" }}>👍 Thumb Zone</h4>
+<p className="text-sm" style={{ color: "var(--muted)" }}>
 Las acciones principales deben colocarse en zonas accesibles al pulgar para mejorar la usabilidad.
 </p>
 </div>
 
-<div className="border border-white/10 p-6 rounded-lg hover:bg-white/5 hover:scale-[1.03] transition">
-<h4 className="font-semibold mb-2">✋ One-hand usability</h4>
-<p className="text-gray-400 text-sm">
+<div className="border p-6 rounded-lg hover:scale-[1.03] transition" style={{ borderColor: "var(--border)" }}>
+<h4 className="font-semibold mb-2" style={{ color: "var(--text)" }}>✋ One-hand usability</h4>
+<p className="text-sm" style={{ color: "var(--muted)" }}>
 Las apps deben poder utilizarse cómodamente con una sola mano.
 </p>
 </div>
 
-<div className="border border-white/10 p-6 rounded-lg hover:bg-white/5 hover:scale-[1.03] transition">
-<h4 className="font-semibold mb-2">🧠 Baja carga cognitiva</h4>
-<p className="text-gray-400 text-sm">
+<div className="border p-6 rounded-lg hover:scale-[1.03] transition" style={{ borderColor: "var(--border)" }}>
+<h4 className="font-semibold mb-2" style={{ color: "var(--text)" }}>🧠 Baja carga cognitiva</h4>
+<p className="text-sm" style={{ color: "var(--muted)" }}>
 Interfaces simples ayudan a que los usuarios entiendan rápidamente cómo usar la aplicación.
 </p>
 </div>
@@ -331,17 +331,17 @@ Interfaces simples ayudan a que los usuarios entiendan rápidamente cómo usar l
 
 {/* EXPLICACIÓN EXTRA */}
 
-<div className="border border-indigo-500/20 bg-indigo-500/5 rounded-xl p-6">
+<div className="border rounded-xl p-6" style={{ borderColor: "rgba(99,102,241,0.2)", background: "rgba(99,102,241,0.05)" }}>
 
-<h4 className="font-semibold mb-3 text-lg">
+<h4 className="font-semibold mb-3 text-lg" style={{ color: "var(--text)" }}>
 📱 ¿Por qué son importantes estos principios?
 </h4>
 
-<p className="text-gray-400 text-sm mb-4">
+<p className="text-sm mb-4" style={{ color: "var(--muted)" }}>
 En el diseño de interfaces móviles, la mayoría de los usuarios interactúa con el dispositivo usando una sola mano. Por ello, colocar los elementos interactivos en zonas accesibles y mantener interfaces simples mejora significativamente la experiencia de usuario.
 </p>
 
-<div className="space-y-2 text-gray-400 text-sm">
+<div className="space-y-2 text-sm" style={{ color: "var(--muted)" }}>
 
 <p>👍 Botones importantes en la parte inferior facilitan la navegación.</p>
 <p>✋ Diseñar para una mano reduce esfuerzo y mejora accesibilidad.</p>

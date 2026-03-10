@@ -26,15 +26,15 @@
 }
 
 [data-theme="light"] {
-  --bg: #F8F9FC;
+  --bg: #F5F7FA;
   --surface: #FFFFFF;
-  --surface2: #F0F2F8;
-  --border: rgba(99, 102, 241, 0.2);
-  --text: #1A1A2E;
-  --muted: #5B5B7A;
-  --muted-dark: #9B9BAA;
-  --glow-opacity: 0.15;
-  --noise-opacity: 0.2;
+  --surface2: #E8EBF0;
+  --border: rgba(99, 102, 241, 0.25);
+  --text: #1A202C;
+  --muted: #4A5568;
+  --muted-dark: #718096;
+  --glow-opacity: 0.12;
+  --noise-opacity: 0.15;
 }
 
 * {
@@ -167,6 +167,16 @@ body::before {
   transform: translateY(-4px);
 }
 
+[data-theme="light"] .card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+[data-theme="light"] .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
 /* Badge */
 .badge {
   display: inline-flex;
@@ -202,26 +212,72 @@ body::before {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+[data-theme="light"] .gradient-text-indigo {
+  background: linear-gradient(135deg, #4338ca, #6d28d9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .gradient-text-emerald {
   background: linear-gradient(135deg, #10b981, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+[data-theme="light"] .gradient-text-emerald {
+  background: linear-gradient(135deg, #047857, #0e7490);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .gradient-text-amber {
   background: linear-gradient(135deg, #f59e0b, #f43f5e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+[data-theme="light"] .gradient-text-amber {
+  background: linear-gradient(135deg, #b45309, #b91c1c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .gradient-text-rose {
   background: linear-gradient(135deg, #f43f5e, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .gradient-text-cyan {
   background: linear-gradient(135deg, #06b6d4, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .gradient-text-cyan {
+  background: linear-gradient(135deg, #0e7490, #047857);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-violet {
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .gradient-text-violet {
+  background: linear-gradient(135deg, #6d28d9, #0e7490);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

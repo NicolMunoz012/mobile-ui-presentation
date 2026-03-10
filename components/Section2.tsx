@@ -737,7 +737,7 @@ export default function Section2() {
           <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8 }}>
             Diseño Inclusivo
           </h3>
-          <p style={{ color: "#6B6B8A", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
             No existe el &quot;usuario promedio&quot;. Principios clave para diseñar para todos:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
