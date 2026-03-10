@@ -287,7 +287,7 @@ export default function Section2() {
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-0" style={{ borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)" }}>
             {/* List */}
-            <div style={{ background: "#12121A" }}>
+            <div style={{ background: "var(--surface2)", transition: "background 0.3s ease" }}>
               {heuristics.map((h, i) => (
                 <div
                   key={h.num}
@@ -295,7 +295,7 @@ export default function Section2() {
                   style={{
                     padding: "16px 20px",
                     cursor: "pointer",
-                    borderBottom: i < heuristics.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
+                    borderBottom: i < heuristics.length - 1 ? "1px solid var(--border)" : "none",
                     background: activeHeuristic === i ? `${h.color}10` : "transparent",
                     borderLeft: activeHeuristic === i ? `3px solid ${h.color}` : "3px solid transparent",
                     transition: "all 0.2s",
@@ -304,14 +304,14 @@ export default function Section2() {
                     gap: 12,
                   }}
                 >
-                  <span className="mono" style={{ color: activeHeuristic === i ? h.color : "#6B6B8A", fontSize: "0.75rem", flexShrink: 0 }}>
+                  <span className="mono" style={{ color: activeHeuristic === i ? h.color : "var(--muted)", fontSize: "0.75rem", flexShrink: 0 }}>
                     {h.num}
                   </span>
                   <span
                     style={{
                       fontSize: "0.9rem",
                       fontWeight: 500,
-                      color: activeHeuristic === i ? "#F0F0FF" : "#6B6B8A",
+                      color: activeHeuristic === i ? "var(--text)" : "var(--muted)",
                     }}
                   >
                     {h.title}
@@ -323,12 +323,13 @@ export default function Section2() {
             {/* Detail */}
             <div
               style={{
-                background: "#0A0A0F",
+                background: "var(--bg)",
                 padding: 32,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 minHeight: 280,
+                transition: "background 0.3s ease",
               }}
             >
               <div
@@ -355,7 +356,7 @@ export default function Section2() {
               >
                 {heuristics[activeHeuristic].title}
               </h4>
-              <p style={{ color: "#A0A0C0", lineHeight: 1.7, marginBottom: 20, fontSize: "clamp(0.85rem, 2vw, 0.95rem)" }}>
+              <p style={{ color: "var(--muted)", lineHeight: 1.7, marginBottom: 20, fontSize: "clamp(0.85rem, 2vw, 0.95rem)" }}>
                 {heuristics[activeHeuristic].desc}
               </p>
               <div
@@ -407,12 +408,12 @@ export default function Section2() {
                     boxShadow: activeAffordance === i ? `0 0 12px ${a.color}80` : "none",
                     transition: "all 0.3s ease",
                   }} />
-                  <h4 style={{ fontFamily: "Syne", fontSize: "1.1rem", fontWeight: 700, color: activeAffordance === i ? a.color : "#A0A0C0", transition: "color 0.3s" }}>
+                  <h4 style={{ fontFamily: "Syne", fontSize: "1.1rem", fontWeight: 700, color: activeAffordance === i ? a.color : "var(--muted)", transition: "color 0.3s" }}>
                     {a.type}
                   </h4>
                 </div>
                 <p style={{ 
-                  color: activeAffordance === i ? "#F0F0FF" : "#A0A0C0", 
+                  color: activeAffordance === i ? "var(--text)" : "var(--muted)", 
                   fontSize: "0.85rem", 
                   lineHeight: 1.6, 
                   marginBottom: 12,
@@ -434,7 +435,7 @@ export default function Section2() {
                       key={ex}
                       style={{
                         fontSize: "0.75rem",
-                        color: "#6B6B8A",
+                        color: "var(--muted)",
                         background: `${a.color}08`,
                         padding: "6px 10px",
                         borderRadius: 6,
@@ -466,7 +467,7 @@ export default function Section2() {
           <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8 }}>
             Feedback
           </h3>
-          <p style={{ color: "#6B6B8A", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
             Cada acción debe tener respuesta del sistema. Tres niveles de feedback:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -490,7 +491,7 @@ export default function Section2() {
                       key={ex}
                       style={{
                         fontSize: "0.75rem",
-                        color: "#6B6B8A",
+                        color: "var(--muted)",
                         background: `${f.color}08`,
                         padding: "6px 10px",
                         borderRadius: 6,
@@ -511,7 +512,7 @@ export default function Section2() {
           <h3 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8 }}>
             Consistencia
           </h3>
-          <p style={{ color: "#6B6B8A", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
             Reduce la carga cognitiva: lo predecible libera al usuario para pensar en su objetivo. Cuatro dimensiones:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -524,7 +525,7 @@ export default function Section2() {
                 <h4 style={{ fontFamily: "Syne", fontSize: "1.1rem", fontWeight: 700, color: c.color, marginBottom: 10 }}>
                   {c.dimension}
                 </h4>
-                <p style={{ color: "#A0A0C0", fontSize: "0.85rem", lineHeight: 1.6 }}>
+                <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.6 }}>
                   {c.desc}
                 </p>
               </div>
@@ -591,7 +592,7 @@ export default function Section2() {
                   >
                     WCAG {w.level}
                   </span>
-                  <p style={{ color: "#6B6B8A", fontSize: "0.85rem", marginTop: 6, lineHeight: 1.5 }}>
+                  <p style={{ color: "var(--muted)", fontSize: "0.85rem", marginTop: 6, lineHeight: 1.5 }}>
                     {w.desc}
                   </p>
                 </div>
@@ -631,7 +632,7 @@ export default function Section2() {
 
             {/* Code comparison */}
             <div className="card p-6" style={{ borderColor: `${ariaExamples[activeAriaExample].color}30` }}>
-              <p style={{ color: "#A0A0C0", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: 16 }}>
+              <p style={{ color: "var(--muted)", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: 16 }}>
                 {ariaExamples[activeAriaExample].explanation}
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -721,7 +722,7 @@ export default function Section2() {
                     >
                       {bp.code}
                     </pre>
-                    <p style={{ color: "#6B6B8A", fontSize: "0.75rem", lineHeight: 1.5 }}>
+                    <p style={{ color: "var(--muted)", fontSize: "0.75rem", lineHeight: 1.5 }}>
                       {bp.desc}
                     </p>
                   </div>
@@ -749,7 +750,7 @@ export default function Section2() {
                 <h4 style={{ fontFamily: "Syne", fontSize: "1.1rem", fontWeight: 700, color: d.color, marginBottom: 10 }}>
                   {d.principle}
                 </h4>
-                <p style={{ color: "#A0A0C0", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: 10 }}>
+                <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: 10 }}>
                   {d.desc}
                 </p>
                 <div

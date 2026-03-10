@@ -80,7 +80,7 @@ export default function HeroSection() {
           <p
             style={{
               fontSize: "1.1rem",
-              color: "#6B6B8A",
+              color: "var(--muted)",
               maxWidth: 480,
               lineHeight: 1.7,
               marginBottom: "2.5rem",
@@ -108,7 +108,7 @@ export default function HeroSection() {
                 >
                   {s.value}
                 </div>
-                <div style={{ fontSize: "0.75rem", color: "#6B6B8A", letterSpacing: "0.05em" }}>
+                <div style={{ fontSize: "0.75rem", color: "var(--muted)", letterSpacing: "0.05em" }}>
                   {s.label}
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default function HeroSection() {
           {/* Scroll hint */}
           <div
             className="flex items-center gap-3"
-            style={{ color: "#6B6B8A", fontSize: "0.8rem", fontFamily: "JetBrains Mono" }}
+            style={{ color: "var(--muted)", fontSize: "0.8rem", fontFamily: "JetBrains Mono" }}
           >
             <div
               style={{

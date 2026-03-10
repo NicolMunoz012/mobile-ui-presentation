@@ -37,11 +37,11 @@ export default function Footer() {
             Diseño Móvil que{" "}
             <span className="gradient-text-indigo">Importa</span>
           </div>
-          <p style={{ color: "#6B6B8A", maxWidth: 480, margin: "0 auto", lineHeight: 1.7 }}>
+          <p style={{ color: "var(--muted)", maxWidth: 480, margin: "0 auto", lineHeight: 1.7 }}>
             El buen diseño no es solo cómo se ve — es cómo funciona,
             cómo se siente, y cómo resuelve problemas reales de personas reales.
           </p>
-          <p style={{ color: "#4B4B6A", marginTop: 8, fontSize: "0.85rem", fontStyle: "italic" }}>
+          <p style={{ color: "var(--muted-dark)", marginTop: 8, fontSize: "0.85rem", fontStyle: "italic" }}>
             — Inspirado en Steve Jobs
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function Footer() {
               }}
             >
               <span className="mono" style={{ fontSize: "0.7rem", color: s.color }}>{s.num}</span>
-              <span style={{ fontSize: "0.8rem", color: "#A0A0C0" }}>{s.label}</span>
+              <span style={{ fontSize: "0.8rem", color: "var(--muted)" }}>{s.label}</span>
             </a>
           ))}
         </div>
@@ -113,11 +113,11 @@ export default function Footer() {
             >
               UI
             </div>
-            <span style={{ fontFamily: "Syne", fontSize: "0.85rem", color: "#6B6B8A" }}>
+            <span style={{ fontFamily: "Syne", fontSize: "0.85rem", color: "var(--muted)" }}>
               Diseño de Interfaces Móviles
             </span>
           </div>
-          <div className="mono" style={{ fontSize: "0.7rem", color: "#4B4B6A" }}>
+          <div className="mono" style={{ fontSize: "0.7rem", color: "var(--muted-dark)" }}>
             Diseño de Software · 2025
           </div>
         </div>

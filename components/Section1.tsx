@@ -82,7 +82,7 @@ export default function Section1() {
             Fundamentos del{" "}
             <span className="gradient-text-indigo">Diseño Móvil</span>
           </h2>
-          <p style={{ color: "#6B6B8A", fontSize: "1.1rem", maxWidth: 560, lineHeight: 1.7 }}>
+          <p style={{ color: "var(--muted)", fontSize: "1.1rem", maxWidth: 560, lineHeight: 1.7 }}>
             UI/UX móvil, diferencias con web, evolución histórica y por qué el diseño
             decide si una app se usa o se desinstala.
           </p>
@@ -119,7 +119,7 @@ export default function Section1() {
               >
                 {stat.value}
               </div>
-              <div style={{ fontSize: "0.75rem", color: "#6B6B8A", lineHeight: 1.4 }}>
+              <div style={{ fontSize: "0.75rem", color: "var(--muted)", lineHeight: 1.4 }}>
                 {stat.label}
               </div>
             </div>
@@ -142,8 +142,8 @@ export default function Section1() {
             <h3 style={{ fontFamily: "Syne", fontSize: "1.3rem", fontWeight: 700, marginBottom: 8, color: "#6366f1" }}>
               UI — User Interface
             </h3>
-            <p style={{ color: "#6B6B8A", lineHeight: 1.7, fontSize: "0.95rem" }}>
-              Es el <strong style={{ color: "#F0F0FF" }}>aspecto visual</strong> de una app.
+            <p style={{ color: "var(--muted)", lineHeight: 1.7, fontSize: "0.95rem" }}>
+              Es el <strong style={{ color: "var(--text)" }}>aspecto visual</strong> de una app.
               Incluye colores, botones, tipografía y todos los elementos visuales.
               Es lo que el usuario ve y toca.
             </p>
@@ -170,8 +170,8 @@ export default function Section1() {
             <h3 style={{ fontFamily: "Syne", fontSize: "1.3rem", fontWeight: 700, marginBottom: 8, color: "#8b5cf6" }}>
               UX — User Experience
             </h3>
-            <p style={{ color: "#6B6B8A", lineHeight: 1.7, fontSize: "0.95rem" }}>
-              Es la <strong style={{ color: "#F0F0FF" }}>experiencia completa</strong> del usuario.
+            <p style={{ color: "var(--muted)", lineHeight: 1.7, fontSize: "0.95rem" }}>
+              Es la <strong style={{ color: "var(--text)" }}>experiencia completa</strong> del usuario.
               Incluye flujos, emociones, usabilidad y cómo se <em>siente</em> al usar la app.
               UI y UX son complementarios.
             </p>
@@ -214,7 +214,7 @@ export default function Section1() {
                   >
                     {item.year}
                   </span>
-                  <span style={{ color: "#A0A0C0", fontSize: "0.95rem" }}>{item.event}</span>
+                  <span style={{ color: "var(--muted)", fontSize: "0.95rem" }}>{item.event}</span>
                 </div>
               </div>
             ))}
@@ -236,8 +236,8 @@ export default function Section1() {
                 borderBottom: "1px solid rgba(99,102,241,0.1)",
               }}
             >
-              <span style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "0.8rem", color: "#6B6B8A", textTransform: "uppercase", letterSpacing: "0.1em" }}>Aspecto</span>
-              <span style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "0.8rem", color: "#6B6B8A", textTransform: "uppercase", letterSpacing: "0.1em" }}>Web</span>
+              <span style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "0.8rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em" }}>Aspecto</span>
+              <span style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "0.8rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em" }}>Web</span>
               <span style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "0.8rem", color: "#6366f1", textTransform: "uppercase", letterSpacing: "0.1em" }}>Móvil</span>
             </div>
             {differences.map((row, i) => (
@@ -253,11 +253,11 @@ export default function Section1() {
                 onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(99,102,241,0.04)")}
                 onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
               >
-                <span style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 600, fontSize: "0.9rem" }}>
+                <span style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 600, fontSize: "0.9rem", color: "var(--text)" }}>
                   <span>{row.icon}</span> {row.aspect}
                 </span>
-                <span style={{ color: "#6B6B8A", fontSize: "0.85rem" }}>{row.web}</span>
-                <span style={{ color: "#A0C0FF", fontSize: "0.85rem" }}>{row.mobile}</span>
+                <span style={{ color: "var(--muted)", fontSize: "0.85rem" }}>{row.web}</span>
+                <span style={{ color: "#6366f1", fontSize: "0.85rem", fontWeight: 500 }}>{row.mobile}</span>
               </div>
             ))}
           </div>
