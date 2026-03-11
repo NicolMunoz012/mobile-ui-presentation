@@ -317,7 +317,7 @@ export default function Section5() {
           </div>
           <h2
             style={{
-              fontFamily: "Syne, sans-serif",
+              fontFamily: "Plus Jakarta Sans, sans-serif",
               fontSize: "clamp(2rem, 4vw, 3.5rem)",
               fontWeight: 800,
               lineHeight: 1.1,
@@ -337,7 +337,7 @@ export default function Section5() {
 
         {/* 1. Design Process Detailed */}
         <div ref={ref2} className="reveal mb-32">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.8rem", fontWeight: 700, marginBottom: 32, display: "flex", alignItems: "center", gap: 12 }}>
+          <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.8rem", fontWeight: 700, marginBottom: 32, display: "flex", alignItems: "center", gap: 12 }}>
             <span style={{ color: "#f59e0b" }}>01.</span> Flujo de Diseño Detallado
           </h3>
 
@@ -383,7 +383,7 @@ export default function Section5() {
                   </div>
                   <div>
                     <div className="mono" style={{ fontSize: "0.75rem", color: processSteps[activeStep].color, letterSpacing: "0.1em" }}>PHASE {processSteps[activeStep].step}</div>
-                    <h4 style={{ fontFamily: "Syne", fontSize: "1.5rem", fontWeight: 700 }}>{processSteps[activeStep].name}</h4>
+                    <h4 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.5rem", fontWeight: 700 }}>{processSteps[activeStep].name}</h4>
                   </div>
                 </div>
                 <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "1rem", marginBottom: 24 }}>
@@ -454,7 +454,7 @@ export default function Section5() {
 
         {/* 2. Tool Comparison */}
         <div ref={ref3} className="reveal mb-32">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.8rem", fontWeight: 700, marginBottom: 32, display: "flex", alignItems: "center", gap: 12 }}>
+          <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.8rem", fontWeight: 700, marginBottom: 32, display: "flex", alignItems: "center", gap: 12 }}>
             <span style={{ color: "#f59e0b" }}>02.</span> Análisis de Herramientas
           </h3>
           
@@ -504,7 +504,7 @@ export default function Section5() {
         {/* 3. Design Handoff */}
         <div ref={ref4} className="reveal mb-32">
           <div className="card p-10" style={{ background: "linear-gradient(145deg, rgba(99,102,241,0.05) 0%, rgba(13,13,20,1) 100%)", border: "1px solid rgba(99,102,241,0.15)" }}>
-            <h3 style={{ fontFamily: "Syne", fontSize: "1.8rem", fontWeight: 700, marginBottom: 12 }}>
+            <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.8rem", fontWeight: 700, marginBottom: 12 }}>
               <span style={{ color: "#6366f1" }}>03.</span> Design Handoff
             </h3>
             <p style={{ color: "var(--muted)", marginBottom: 40, maxWidth: 600 }}>
@@ -531,7 +531,7 @@ export default function Section5() {
 
         {/* 4. Metrics & Testing */}
         <div ref={ref5} className="reveal mb-32">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.8rem", fontWeight: 700, marginBottom: 32, display: "flex", alignItems: "center", gap: 12 }}>
+          <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.8rem", fontWeight: 700, marginBottom: 32, display: "flex", alignItems: "center", gap: 12 }}>
             <span style={{ color: "#f59e0b" }}>04.</span> Métricas y Validación de UX
           </h3>
           
@@ -539,7 +539,7 @@ export default function Section5() {
             {usabilityMetrics.map((m) => (
               <div key={m.name} className="card p-6 group hover:bg-white/[0.02] transition-colors" style={{ borderColor: `${m.color}25` }}>
                 <div style={{ color: m.color, fontSize: "0.7rem", fontWeight: 700, fontFamily: "JetBrains Mono", marginBottom: 8, letterSpacing: "0.1em" }}>{m.kpi}</div>
-                <h4 style={{ fontFamily: "Syne", fontSize: "1.2rem", fontWeight: 800, marginBottom: 4 }}>{m.name}</h4>
+                <h4 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.2rem", fontWeight: 800, marginBottom: 4 }}>{m.name}</h4>
                 <div style={{ fontSize: "0.75rem", color: "var(--muted)", marginBottom: 12 }}>{m.full}</div>
                 <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.5, marginBottom: 16 }}>{m.desc}</p>
                 <div style={{ fontSize: "0.7rem", color: m.color, background: `${m.color}10`, padding: "4px 8px", borderRadius: 4, display: "inline-block" }}>
@@ -552,7 +552,7 @@ export default function Section5() {
 
         {/* 5. Case Studies */}
         <div ref={ref6} className="reveal mb-32">
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.8rem", fontWeight: 700, marginBottom: 32 }}>
+          <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.8rem", fontWeight: 700, marginBottom: 32 }}>
             <span style={{ color: "#f59e0b" }}>05.</span> Casos de Estudio Reales
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
@@ -562,7 +562,7 @@ export default function Section5() {
                   <div style={{ width: 40, height: 40, borderRadius: 10, background: study.color, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, color: "white" }}>
                     {study.company[0]}
                   </div>
-                  <h4 style={{ fontFamily: "Syne", fontSize: "1.4rem", fontWeight: 700 }}>{study.company}</h4>
+                  <h4 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.4rem", fontWeight: 700 }}>{study.company}</h4>
                 </div>
                 <div className="space-y-4">
                   <p style={{ fontSize: "0.95rem", color: "var(--muted)" }}><strong>Desafío:</strong> {study.challenge}</p>

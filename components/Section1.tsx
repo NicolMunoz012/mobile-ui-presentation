@@ -70,7 +70,7 @@ export default function Section1() {
           </div>
           <h2
             style={{
-              fontFamily: "Syne, sans-serif",
+              fontFamily: "Plus Jakarta Sans, sans-serif",
               fontSize: "clamp(2rem, 4vw, 3.5rem)",
               fontWeight: 800,
               lineHeight: 1.1,
@@ -110,7 +110,7 @@ export default function Section1() {
               />
               <div
                 style={{
-                  fontFamily: "Syne, sans-serif",
+                  fontFamily: "Plus Jakarta Sans, sans-serif",
                   fontSize: "2.2rem",
                   fontWeight: 800,
                   color: stat.color,
@@ -139,7 +139,7 @@ export default function Section1() {
             >
               🎨
             </div>
-            <h3 style={{ fontFamily: "Syne", fontSize: "1.3rem", fontWeight: 700, marginBottom: 8, color: "#6366f1" }}>
+            <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.3rem", fontWeight: 700, marginBottom: 8, color: "#6366f1" }}>
               UI — User Interface
             </h3>
             <p style={{ color: "var(--muted)", lineHeight: 1.7, fontSize: "0.95rem" }}>
@@ -167,7 +167,7 @@ export default function Section1() {
             >
               🧠
             </div>
-            <h3 style={{ fontFamily: "Syne", fontSize: "1.3rem", fontWeight: 700, marginBottom: 8, color: "#8b5cf6" }}>
+            <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.3rem", fontWeight: 700, marginBottom: 8, color: "#8b5cf6" }}>
               UX — User Experience
             </h3>
             <p style={{ color: "var(--muted)", lineHeight: 1.7, fontSize: "0.95rem" }}>
@@ -187,7 +187,7 @@ export default function Section1() {
 
         {/* Timeline */}
         <div>
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.5rem", fontWeight: 700, marginBottom: 24 }}>
+          <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.5rem", fontWeight: 700, marginBottom: 24 }}>
             Timeline histórico
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
@@ -223,7 +223,7 @@ export default function Section1() {
 
         {/* Differences table */}
         <div style={{ marginTop: 48 }}>
-          <h3 style={{ fontFamily: "Syne", fontSize: "1.5rem", fontWeight: 700, marginBottom: 24 }}>
+          <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.5rem", fontWeight: 700, marginBottom: 24 }}>
             Diseño Web vs. Diseño Móvil
           </h3>
           <div className="card" style={{ overflow: "hidden" }}>
@@ -236,9 +236,9 @@ export default function Section1() {
                 borderBottom: "1px solid rgba(99,102,241,0.1)",
               }}
             >
-              <span style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "0.8rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em" }}>Aspecto</span>
-              <span style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "0.8rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em" }}>Web</span>
-              <span style={{ fontFamily: "Syne", fontWeight: 700, fontSize: "0.8rem", color: "#6366f1", textTransform: "uppercase", letterSpacing: "0.1em" }}>Móvil</span>
+              <span style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 700, fontSize: "0.8rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em" }}>Aspecto</span>
+              <span style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 700, fontSize: "0.8rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em" }}>Web</span>
+              <span style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 700, fontSize: "0.8rem", color: "#6366f1", textTransform: "uppercase", letterSpacing: "0.1em" }}>Móvil</span>
             </div>
             {differences.map((row, i) => (
               <div

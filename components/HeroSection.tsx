@@ -56,11 +56,11 @@ export default function HeroSection() {
 
           <h1
             style={{
-              fontFamily: "Syne, sans-serif",
+              fontFamily: "Plus Jakarta Sans, sans-serif",
               fontSize: "clamp(2.5rem, 6vw, 5rem)",
               fontWeight: 800,
               lineHeight: 1.05,
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.03em",
               marginBottom: "1.5rem",
             }}
           >
@@ -79,11 +79,12 @@ export default function HeroSection() {
 
           <p
             style={{
-              fontSize: "1.1rem",
+              fontSize: "1.125rem",
               color: "var(--muted)",
               maxWidth: 480,
               lineHeight: 1.7,
               marginBottom: "2.5rem",
+              fontWeight: 400,
             }}
           >
             Una exploración profunda de los principios, sistemas y procesos
@@ -100,7 +101,7 @@ export default function HeroSection() {
               <div key={s.label}>
                 <div
                   style={{
-                    fontFamily: "Syne, sans-serif",
+                    fontFamily: "Plus Jakarta Sans, sans-serif",
                     fontSize: "2rem",
                     fontWeight: 800,
                     color: "#6366f1",
@@ -108,7 +109,7 @@ export default function HeroSection() {
                 >
                   {s.value}
                 </div>
-                <div style={{ fontSize: "0.75rem", color: "var(--muted)", letterSpacing: "0.05em" }}>
+                <div style={{ fontSize: "0.75rem", color: "var(--muted)", letterSpacing: "0.05em", fontWeight: 500 }}>
                   {s.label}
                 </div>
               </div>
@@ -219,7 +220,7 @@ export default function HeroSection() {
                   >
                     📱
                   </div>
-                  <div style={{ fontSize: 11, color: "rgba(255,255,255,0.8)", fontWeight: 600, fontFamily: "Syne" }}>
+                  <div style={{ fontSize: 11, color: "rgba(255,255,255,0.8)", fontWeight: 700, fontFamily: "Plus Jakarta Sans" }}>
                     MobileUI
                   </div>
                   <div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", fontFamily: "JetBrains Mono" }}>

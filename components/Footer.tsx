@@ -27,7 +27,7 @@ export default function Footer() {
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div
             style={{
-              fontFamily: "Syne",
+              fontFamily: "Plus Jakarta Sans",
               fontSize: "clamp(1.8rem, 4vw, 3rem)",
               fontWeight: 800,
               marginBottom: 16,
@@ -85,8 +85,8 @@ export default function Footer() {
                 (e.currentTarget as HTMLAnchorElement).style.background = `${s.color}10`;
               }}
             >
-              <span className="mono" style={{ fontSize: "0.7rem", color: s.color }}>{s.num}</span>
-              <span style={{ fontSize: "0.8rem", color: "var(--muted)" }}>{s.label}</span>
+              <span className="mono" style={{ fontSize: "0.7rem", color: s.color, fontWeight: 700 }}>{s.num}</span>
+              <span style={{ fontSize: "0.8rem", color: "var(--muted)", fontWeight: 500 }}>{s.label}</span>
             </a>
           ))}
         </div>
@@ -109,13 +109,13 @@ export default function Footer() {
                 width: 28, height: 28, borderRadius: 8,
                 background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 11, fontWeight: 800, fontFamily: "Syne",
+                fontSize: 11, fontWeight: 800, fontFamily: "Plus Jakarta Sans",
                 color: "white",
               }}
             >
               UI
             </div>
-            <span style={{ fontFamily: "Syne", fontSize: "0.85rem", color: "var(--muted)" }}>
+            <span style={{ fontFamily: "Plus Jakarta Sans", fontSize: "0.85rem", color: "var(--muted)", fontWeight: 500 }}>
               Diseño de Interfaces Móviles
             </span>
           </div>
