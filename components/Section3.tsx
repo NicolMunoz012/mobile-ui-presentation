@@ -675,31 +675,39 @@ export default function Section3() {
         {/* ══════════ COMPONENTS ══════════ */}
         <div ref={ref6} className="reveal" style={{ marginBottom:56 }}>
           <h3 style={{ fontFamily:S.fh, fontSize:"1.4rem", fontWeight:700, marginBottom:12, color:S.text }}>Componentes Reutilizables</h3>
-          <p style={{ color:S.muted, fontSize:"0.9rem", marginBottom:16, lineHeight:1.65 }}>Variaciones según plataforma aplicando tokens de color, radio y tipografía.</p>
+          <p style={{ color:S.muted, fontSize:"1.125rem", marginBottom:20, lineHeight:1.65 }}>Variaciones según plataforma aplicando tokens de color, radio y tipografía.</p>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))", gap:16 }}>
             {/* atoms grid */}
             {[["ATOMS","Button · Icon\nBadge · Label"],["MOLECULES","Card · ListItem\nSearchBar · Chip"],["ORGANISMS","AppBar · NavBar\nBottomSheet · Modal"],["TEMPLATES","Feed · Profile\nCheckout · Onboarding"]].map(([level,items]) => (
-              <div key={level} style={{ ...card({ padding:"18px 20px" }), background:"rgba(20,27,40,1)" }}>
-                <div style={{ fontFamily:S.fm, fontSize:"0.65rem", color:S.comp, marginBottom:8, letterSpacing:".1em" }}>{level}</div>
-                <div style={{ fontSize:"0.82rem", color:S.dim, lineHeight:1.7, whiteSpace:"pre-line" as const }}>{items}</div>
+              <div key={level} style={{ 
+                padding:"18px 20px", 
+                borderRadius:"16px",
+                background:"var(--surface)",
+                border:"0.8px solid var(--border)",
+                color:"var(--text)",
+                lineHeight:"25.6px",
+                transition: "all 0.3s ease"
+              }}>
+                <div style={{ fontFamily:S.fm, fontSize:"1rem", color:S.comp, marginBottom:10, letterSpacing:".1em", fontWeight: 700 }}>{level}</div>
+                <div style={{ fontSize:"1.125rem", color:"var(--muted)", lineHeight:1.7, whiteSpace:"pre-line" as const }}>{items}</div>
               </div>
             ))}
           </div>
           {/* live component demo */}
           <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:16, marginTop:16 }}>
             <div style={card({ display:"flex", flexDirection:"column", gap:12 })}>
-              <span style={{ fontFamily:S.fm, fontSize:"0.68rem", color:S.muted }}>Botón Primario</span>
+              <span style={{ fontFamily:S.fm, fontSize:"1rem", color:S.muted }}>Botón Primario</span>
               <button style={{ padding: platform==="material"?"12px 18px":"12px 22px", background: platform==="material"?"#3DDC84":"rgba(0,122,255,0.12)", color: platform==="material"?"#031B1A":"#C7C8FF", borderRadius: platform==="material"?14:12, border: platform==="material"?"none":"1px solid rgba(0,122,255,0.4)", fontFamily:S.fh, fontWeight:700, transition:"all .2s", cursor:"pointer" }}>Continuar</button>
             </div>
             <div style={card({ display:"flex", flexDirection:"column", gap:12 })}>
-              <span style={{ fontFamily:S.fm, fontSize:"0.68rem", color:S.muted }}>Card</span>
-              <div style={{ background:"rgba(255,255,255,0.02)", border:`1px solid ${S.border}`, borderRadius: platform==="material"?16:20, padding:14, boxShadow: platform==="material"?"0 8px 24px rgba(0,0,0,.25)":"0 2px 12px rgba(0,0,0,.15)" }}>
-                <div style={{ fontFamily:S.fh, fontWeight:700, marginBottom:5, color:S.text, fontSize:"0.9rem" }}>Título</div>
-                <div style={{ color:S.muted, fontSize:"0.8rem" }}>Descripción breve del contenido.</div>
+              <span style={{ fontFamily:S.fm, fontSize:"1rem", color:S.muted }}>Card</span>
+              <div style={{ background:"var(--surface2)", border:`1px solid ${S.border}`, borderRadius: platform==="material"?16:20, padding:14, boxShadow: platform==="material"?"0 8px 24px rgba(0,0,0,.25)":"0 2px 12px rgba(0,0,0,.15)" }}>
+                <div style={{ fontFamily:S.fh, fontWeight:700, marginBottom:5, color:S.text, fontSize:"1.125rem" }}>Título</div>
+                <div style={{ color:S.muted, fontSize:"1rem" }}>Descripción breve del contenido.</div>
               </div>
             </div>
             <div style={card({ display:"flex", flexDirection:"column", gap:12 })}>
-              <span style={{ fontFamily:S.fm, fontSize:"0.68rem", color:S.muted }}>FAB</span>
+              <span style={{ fontFamily:S.fm, fontSize:"1rem", color:S.muted }}>FAB</span>
               <div style={{ height:56, display:"flex", alignItems:"center" }}>
                 <div style={{ width: platform==="material"?56:48, height: platform==="material"?56:48, borderRadius:999, background: platform==="material"?"#22D3EE":"rgba(255,255,255,0.05)", display:"flex", alignItems:"center", justifyContent:"center", border: platform==="material"?"none":`1px solid ${S.border}`, boxShadow: platform==="material"?"0 10px 28px rgba(34,211,238,0.35)":"none", color: platform==="material"?"#001B22":S.dim, fontSize:22, fontWeight:700 }}>+</div>
               </div>
@@ -709,7 +717,7 @@ export default function Section3() {
           <div style={{ display:"flex", gap:8, marginTop:12 }}>
             {[{k:"material",l:"🤖 Android",c:"#3DDC84"},{k:"hig",l:"🍎 iOS",c:"#007AFF"}].map(p => (
               <button key={p.k} onClick={() => setPlatform(p.k as "material"|"hig")}
-                style={{ padding:"8px 18px", borderRadius:100, border:`1px solid ${platform===p.k?p.c:S.border}`, background: platform===p.k?`${p.c}15`:"transparent", color: platform===p.k?p.c:S.muted, fontFamily:S.fm, fontSize:"0.75rem", cursor:"pointer", transition:"all .2s" }}>
+                style={{ padding:"10px 20px", borderRadius:100, border:`1px solid ${platform===p.k?p.c:S.border}`, background: platform===p.k?`${p.c}15`:"transparent", color: platform===p.k?p.c:S.muted, fontFamily:S.fm, fontSize:"1rem", cursor:"pointer", transition:"all .2s" }}>
                 {p.l}
               </button>
             ))}

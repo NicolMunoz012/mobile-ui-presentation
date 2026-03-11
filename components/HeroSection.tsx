@@ -109,7 +109,7 @@ export default function HeroSection() {
                 >
                   {s.value}
                 </div>
-                <div style={{ fontSize: "0.75rem", color: "var(--muted)", letterSpacing: "0.05em", fontWeight: 500 }}>
+                <div style={{ fontSize: "1rem", color: "var(--muted)", letterSpacing: "0.05em", fontWeight: 500 }}>
                   {s.label}
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function HeroSection() {
           {/* Scroll hint */}
           <div
             className="flex items-center gap-3"
-            style={{ color: "var(--muted)", fontSize: "0.8rem", fontFamily: "JetBrains Mono" }}
+            style={{ color: "var(--muted)", fontSize: "1rem", fontFamily: "Fira Code", marginTop: "0.5rem" }}
           >
             <div
               style={{
@@ -168,11 +168,11 @@ export default function HeroSection() {
                 transform: "rotate(-8deg)",
               }}
             >
-              <div style={{ background: "linear-gradient(135deg, #1e1b4b, #312e81)", height: "100%", padding: 16 }}>
-                <div style={{ height: 6, background: "rgba(255,255,255,0.1)", borderRadius: 3, marginBottom: 8 }} />
+              <div style={{ background: "var(--surface2)", height: "100%", padding: 16 }}>
+                <div style={{ height: 6, background: "var(--border)", borderRadius: 3, marginBottom: 8 }} />
                 <div style={{ height: 6, background: "rgba(99,102,241,0.4)", borderRadius: 3, marginBottom: 16, width: "70%" }} />
                 {[1,2,3].map(i => (
-                  <div key={i} style={{ height: 60, background: "rgba(255,255,255,0.05)", borderRadius: 8, marginBottom: 8 }} />
+                  <div key={i} style={{ height: 60, background: "var(--surface)", borderRadius: 8, marginBottom: 8 }} />
                 ))}
               </div>
             </div>
@@ -198,13 +198,13 @@ export default function HeroSection() {
                   transform: "translateX(-50%)",
                   width: 80,
                   height: 18,
-                  background: "#0A0A0F",
+                  background: "var(--bg)",
                   borderRadius: 9,
                   zIndex: 10,
                 }}
               />
               {/* Screen content */}
-              <div style={{ background: "linear-gradient(160deg, #0f0f1a, #1a1a2e)", height: "100%", padding: "48px 16px 16px" }}>
+              <div style={{ background: "var(--surface2)", height: "100%", padding: "48px 16px 16px" }}>
                 <div style={{ textAlign: "center", marginBottom: 20 }}>
                   <div
                     style={{
@@ -220,17 +220,17 @@ export default function HeroSection() {
                   >
                     📱
                   </div>
-                  <div style={{ fontSize: 11, color: "rgba(255,255,255,0.8)", fontWeight: 700, fontFamily: "Plus Jakarta Sans" }}>
+                  <div style={{ fontSize: 11, color: "var(--text)", fontWeight: 700, fontFamily: "Cabinet Grotesk", opacity: 0.9 }}>
                     MobileUI
                   </div>
-                  <div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", fontFamily: "JetBrains Mono" }}>
+                  <div style={{ fontSize: 9, color: "var(--muted)", fontFamily: "Fira Code", opacity: 0.7 }}>
                     v2.4.1
                   </div>
                 </div>
                 {/* Fake UI elements */}
                 <div style={{ background: "rgba(99,102,241,0.15)", borderRadius: 10, padding: 10, marginBottom: 8, border: "1px solid rgba(99,102,241,0.2)" }}>
                   <div style={{ height: 8, background: "rgba(99,102,241,0.6)", borderRadius: 4, marginBottom: 4, width: "80%" }} />
-                  <div style={{ height: 6, background: "rgba(255,255,255,0.1)", borderRadius: 3, width: "60%" }} />
+                  <div style={{ height: 6, background: "var(--border)", borderRadius: 3, width: "60%" }} />
                 </div>
                 {[
                   { color: "#6366f1", w: "90%" },
@@ -240,8 +240,8 @@ export default function HeroSection() {
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                     <div style={{ width: 28, height: 28, borderRadius: 8, background: `${row.color}30`, border: `1px solid ${row.color}50`, flexShrink: 0 }} />
                     <div style={{ flex: 1 }}>
-                      <div style={{ height: 6, background: "rgba(255,255,255,0.15)", borderRadius: 3, marginBottom: 4, width: row.w }} />
-                      <div style={{ height: 4, background: "rgba(255,255,255,0.06)", borderRadius: 2, width: "50%" }} />
+                      <div style={{ height: 6, background: "var(--border)", borderRadius: 3, marginBottom: 4, width: row.w }} />
+                      <div style={{ height: 4, background: "var(--border)", borderRadius: 2, width: "50%", opacity: 0.5 }} />
                     </div>
                   </div>
                 ))}
@@ -252,16 +252,16 @@ export default function HeroSection() {
                     bottom: 12,
                     left: 12,
                     right: 12,
-                    background: "rgba(255,255,255,0.05)",
+                    background: "var(--surface)",
                     borderRadius: 16,
                     padding: "8px 0",
                     display: "flex",
                     justifyContent: "space-around",
-                    border: "1px solid rgba(255,255,255,0.08)",
+                    border: "1px solid var(--border)",
                   }}
                 >
                   {["⊞", "◎", "⊕", "◈"].map((icon, i) => (
-                    <div key={i} style={{ fontSize: 14, opacity: i === 1 ? 1 : 0.3, color: i === 1 ? "#6366f1" : "white" }}>
+                    <div key={i} style={{ fontSize: 14, opacity: i === 1 ? 1 : 0.3, color: i === 1 ? "#6366f1" : "var(--text)" }}>
                       {icon}
                     </div>
                   ))}
@@ -283,10 +283,10 @@ export default function HeroSection() {
                 animationDelay: "1s",
               }}
             >
-              <div style={{ background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)", height: "100%", padding: 12 }}>
+              <div style={{ background: "var(--surface2)", height: "100%", padding: 12 }}>
                 <div style={{ height: 100, background: "rgba(6,182,212,0.15)", borderRadius: 8, marginBottom: 8 }} />
                 <div style={{ height: 6, background: "rgba(6,182,212,0.4)", borderRadius: 3, marginBottom: 6 }} />
-                <div style={{ height: 6, background: "rgba(255,255,255,0.1)", borderRadius: 3, width: "70%" }} />
+                <div style={{ height: 6, background: "var(--border)", borderRadius: 3, width: "70%" }} />
               </div>
             </div>
           </div>
@@ -299,7 +299,7 @@ export default function HeroSection() {
           position: "absolute",
           bottom: 0, left: 0, right: 0,
           height: 200,
-          background: "linear-gradient(to bottom, transparent, #0A0A0F)",
+          background: "linear-gradient(to bottom, transparent, var(--bg))",
         }}
       />
     </section>

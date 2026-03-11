@@ -361,7 +361,7 @@ export default function Section5() {
                 }}
               >
                 <span style={{ fontSize: 20 }}>{s.icon}</span>
-                <span style={{ fontSize: "0.9rem", fontWeight: 600, color: activeStep === i ? "var(--text)" : "var(--muted)" }}>
+                <span style={{ fontSize: "1.125rem", fontWeight: 600, color: activeStep === i ? "var(--text)" : "var(--muted)" }}>
                   {s.name}
                 </span>
               </button>
@@ -382,7 +382,7 @@ export default function Section5() {
                     {processSteps[activeStep].icon}
                   </div>
                   <div>
-                    <div className="mono" style={{ fontSize: "0.75rem", color: processSteps[activeStep].color, letterSpacing: "0.1em" }}>PHASE {processSteps[activeStep].step}</div>
+                    <div className="mono" style={{ fontSize: "1rem", color: processSteps[activeStep].color, letterSpacing: "0.1em" }}>PHASE {processSteps[activeStep].step}</div>
                     <h4 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.5rem", fontWeight: 700 }}>{processSteps[activeStep].name}</h4>
                   </div>
                 </div>
@@ -392,18 +392,18 @@ export default function Section5() {
                 
                 <div className="space-y-6">
                   <div>
-                    <div style={{ fontSize: "0.7rem", fontFamily: "JetBrains Mono", color: processSteps[activeStep].color, marginBottom: 12, textTransform: "uppercase" }}>{"// Metodologías"}</div>
+                    <div style={{ fontSize: "1rem", fontFamily: "Fira Code", color: processSteps[activeStep].color, marginBottom: 12, textTransform: "uppercase" }}>{"// Metodologías"}</div>
                     <div className="flex flex-wrap gap-2">
                       {processSteps[activeStep].methodologies.map(m => (
-                        <span key={m} style={{ padding: "4px 12px", borderRadius: 6, fontSize: "0.8rem", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "#D1D1E0" }}>{m}</span>
+                        <span key={m} style={{ padding: "6px 14px", borderRadius: 6, fontSize: "1rem", background: "var(--surface)", border: "1px solid var(--border)", color: "var(--text)" }}>{m}</span>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <div style={{ fontSize: "0.7rem", fontFamily: "JetBrains Mono", color: processSteps[activeStep].color, marginBottom: 12, textTransform: "uppercase" }}>{"// Técnicas y Prácticas"}</div>
+                    <div style={{ fontSize: "1rem", fontFamily: "Fira Code", color: processSteps[activeStep].color, marginBottom: 12, textTransform: "uppercase" }}>{"// Técnicas y Prácticas"}</div>
                     <ul className="space-y-2">
                       {processSteps[activeStep].techniques.map(t => (
-                        <li key={t} style={{ color: "var(--muted)", fontSize: "0.85rem", display: "flex", alignItems: "center", gap: 8 }}>
+                        <li key={t} style={{ color: "var(--muted)", fontSize: "1.125rem", display: "flex", alignItems: "center", gap: 8 }}>
                           <span style={{ color: processSteps[activeStep].color }}>•</span> {t}
                         </li>
                       ))}
@@ -412,19 +412,19 @@ export default function Section5() {
                 </div>
               </div>
 
-              <div style={{ background: "rgba(255,255,255,0.02)", borderRadius: 20, padding: 32, border: "1px solid rgba(255,255,255,0.05)" }}>
-                <div style={{ fontSize: "0.75rem", fontFamily: "JetBrains Mono", color: "var(--muted)", marginBottom: 20, textAlign: "right" }}>
+              <div style={{ background: "var(--surface)", borderRadius: 20, padding: 32, border: "1px solid var(--border)" }}>
+                <div style={{ fontSize: "1rem", fontFamily: "Fira Code", color: "var(--muted)", marginBottom: 20, textAlign: "right" }}>
                   OUTPUTS_AND_BEST_PRACTICES.log
                 </div>
                 
                 <div style={{ marginBottom: 32 }}>
-                  <h5 style={{ fontSize: "0.9rem", fontWeight: 700, color: "var(--text)", marginBottom: 16 }}>Entregables Clave:</h5>
+                  <h5 style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text)", marginBottom: 16 }}>Entregables Clave:</h5>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                     {processSteps[activeStep].deliverables.map((d) => (
                       <div key={d} style={{ 
-                        padding: "12px", borderRadius: 12, fontSize: "0.85rem",
-                        background: "rgba(0,0,0,0.2)", color: "var(--muted)",
-                        border: "1px solid rgba(255,255,255,0.05)",
+                        padding: "12px", borderRadius: 12, fontSize: "1.125rem",
+                        background: "var(--surface2)", color: "var(--muted)",
+                        border: "1px solid var(--border)",
                         display: "flex", alignItems: "center", gap: 10
                       }}>
                         <span style={{ color: processSteps[activeStep].color }}>📄</span> {d}
@@ -434,11 +434,11 @@ export default function Section5() {
                 </div>
 
                 <div>
-                  <h5 style={{ fontSize: "0.9rem", fontWeight: 700, color: "var(--text)", marginBottom: 16 }}>Mejores Prácticas:</h5>
+                  <h5 style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text)", marginBottom: 16 }}>Mejores Prácticas:</h5>
                   <div className="space-y-3">
                     {processSteps[activeStep].bestPractices.map((bp) => (
                       <div key={bp} style={{ 
-                        padding: "10px 16px", borderRadius: 10, fontSize: "0.85rem",
+                        padding: "12px 18px", borderRadius: 10, fontSize: "1.125rem",
                         background: `${processSteps[activeStep].color}08`, color: "var(--text)",
                         borderLeft: `3px solid ${processSteps[activeStep].color}`
                       }}>
@@ -466,34 +466,34 @@ export default function Section5() {
                     <span style={{ fontSize: 32 }}>{tool.icon}</span>
                     <span className="badge" style={{ background: `${tool.color}20`, color: tool.color, border: `1px solid ${tool.color}40` }}>{tool.name}</span>
                   </div>
-                  <p style={{ color: "var(--text)", fontSize: "0.9rem", fontWeight: 600 }}>{tool.bestFor}</p>
+                  <p style={{ color: "var(--text)", fontSize: "1.125rem", fontWeight: 600 }}>{tool.bestFor}</p>
                 </div>
                 
                 <div className="p-6 space-y-6">
                   <div>
-                    <div style={{ fontSize: "0.7rem", color: "var(--muted)", marginBottom: 10, textTransform: "uppercase", fontWeight: 700 }}>Ventajas</div>
+                    <div style={{ fontSize: "1rem", color: "var(--muted)", marginBottom: 10, textTransform: "uppercase", fontWeight: 700 }}>Ventajas</div>
                     <ul className="space-y-2">
-                      {tool.pros.map(p => <li key={p} style={{ fontSize: "0.8rem", color: "var(--muted)", display: "flex", gap: 8 }}><span>✅</span> {p}</li>)}
+                      {tool.pros.map(p => <li key={p} style={{ fontSize: "1.125rem", color: "var(--muted)", display: "flex", gap: 8 }}><span>✅</span> {p}</li>)}
                     </ul>
                   </div>
 
                   <div>
-                    <div style={{ fontSize: "0.7rem", color: "var(--muted)", marginBottom: 10, textTransform: "uppercase", fontWeight: 700 }}>Limitaciones</div>
+                    <div style={{ fontSize: "1rem", color: "var(--muted)", marginBottom: 10, textTransform: "uppercase", fontWeight: 700 }}>Limitaciones</div>
                     <ul className="space-y-2">
-                      {tool.cons.map(c => <li key={c} style={{ fontSize: "0.8rem", color: "var(--muted)", display: "flex", gap: 8 }}><span>❌</span> {c}</li>)}
+                      {tool.cons.map(c => <li key={c} style={{ fontSize: "1.125rem", color: "var(--muted)", display: "flex", gap: 8 }}><span>❌</span> {c}</li>)}
                     </ul>
                   </div>
                   
                   <div>
-                    <div style={{ fontSize: "0.7rem", color: "var(--muted)", marginBottom: 10, textTransform: "uppercase", fontWeight: 700 }}>Capacidades Móviles</div>
+                    <div style={{ fontSize: "1rem", color: "var(--muted)", marginBottom: 10, textTransform: "uppercase", fontWeight: 700 }}>Capacidades Móviles</div>
                     <ul className="space-y-2">
-                      {tool.mobile.map(m => <li key={m} style={{ fontSize: "0.8rem", color: "var(--muted)", display: "flex", gap: 8 }}><span>📱</span> {m}</li>)}
+                      {tool.mobile.map(m => <li key={m} style={{ fontSize: "1.125rem", color: "var(--muted)", display: "flex", gap: 8 }}><span>📱</span> {m}</li>)}
                     </ul>
                   </div>
 
-                  <div style={{ paddingTop: 16, borderTop: "1px solid rgba(255,255,255,0.05)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontSize: "0.75rem", color: "var(--muted)" }}>Precio:</span>
-                    <span style={{ fontSize: "0.75rem", color: "var(--text)", fontWeight: 600 }}>{tool.pricing}</span>
+                  <div style={{ paddingTop: 16, borderTop: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: "1rem", color: "var(--muted)" }}>Precio:</span>
+                    <span style={{ fontSize: "1rem", color: "var(--text)", fontWeight: 600 }}>{tool.pricing}</span>
                   </div>
                 </div>
               </div>
@@ -503,8 +503,8 @@ export default function Section5() {
 
         {/* 3. Design Handoff */}
         <div ref={ref4} className="reveal mb-32">
-          <div className="card p-10" style={{ background: "linear-gradient(145deg, rgba(99,102,241,0.05) 0%, rgba(13,13,20,1) 100%)", border: "1px solid rgba(99,102,241,0.15)" }}>
-            <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.8rem", fontWeight: 700, marginBottom: 12 }}>
+          <div className="card p-10" style={{ background: "var(--surface)", border: "1px solid rgba(99,102,241,0.2)" }}>
+            <h3 style={{ fontFamily: "Cabinet Grotesk", fontSize: "1.8rem", fontWeight: 700, marginBottom: 12 }}>
               <span style={{ color: "#6366f1" }}>03.</span> Design Handoff
             </h3>
             <p style={{ color: "var(--muted)", marginBottom: 40, maxWidth: 600 }}>
@@ -514,13 +514,13 @@ export default function Section5() {
             <div className="grid md:grid-cols-4 gap-8">
               {handoffProtocols.map((protocol) => (
                 <div key={protocol.title}>
-                  <h4 style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--text)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+                  <h4 style={{ fontSize: "1.35rem", fontWeight: 700, color: "var(--text)", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
                     <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#6366f1" }}></span>
                     {protocol.title}
                   </h4>
                   <ul className="space-y-3">
                     {protocol.items.map(item => (
-                      <li key={item} style={{ fontSize: "0.85rem", color: "var(--muted)" }}>{item}</li>
+                      <li key={item} style={{ fontSize: "1.125rem", color: "var(--muted)" }}>{item}</li>
                     ))}
                   </ul>
                 </div>
@@ -538,11 +538,11 @@ export default function Section5() {
           <div className="grid md:grid-cols-4 gap-4 mb-12">
             {usabilityMetrics.map((m) => (
               <div key={m.name} className="card p-6 group hover:bg-white/[0.02] transition-colors" style={{ borderColor: `${m.color}25` }}>
-                <div style={{ color: m.color, fontSize: "0.7rem", fontWeight: 700, fontFamily: "JetBrains Mono", marginBottom: 8, letterSpacing: "0.1em" }}>{m.kpi}</div>
-                <h4 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.2rem", fontWeight: 800, marginBottom: 4 }}>{m.name}</h4>
-                <div style={{ fontSize: "0.75rem", color: "var(--muted)", marginBottom: 12 }}>{m.full}</div>
-                <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.5, marginBottom: 16 }}>{m.desc}</p>
-                <div style={{ fontSize: "0.7rem", color: m.color, background: `${m.color}10`, padding: "4px 8px", borderRadius: 4, display: "inline-block" }}>
+                <div style={{ color: m.color, fontSize: "1rem", fontWeight: 700, fontFamily: "Fira Code", marginBottom: 8, letterSpacing: "0.1em" }}>{m.kpi}</div>
+                <h4 style={{ fontFamily: "Cabinet Grotesk", fontSize: "1.2rem", fontWeight: 800, marginBottom: 4 }}>{m.name}</h4>
+                <div style={{ fontSize: "1rem", color: "var(--muted)", marginBottom: 12 }}>{m.full}</div>
+                <p style={{ color: "var(--muted)", fontSize: "1.125rem", lineHeight: 1.5, marginBottom: 16 }}>{m.desc}</p>
+                <div style={{ fontSize: "1rem", color: m.color, background: `${m.color}10`, padding: "6px 10px", borderRadius: 4, display: "inline-block" }}>
                   Tool: {m.tool}
                 </div>
               </div>
@@ -565,10 +565,10 @@ export default function Section5() {
                   <h4 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.4rem", fontWeight: 700 }}>{study.company}</h4>
                 </div>
                 <div className="space-y-4">
-                  <p style={{ fontSize: "0.95rem", color: "var(--muted)" }}><strong>Desafío:</strong> {study.challenge}</p>
-                  <p style={{ fontSize: "0.95rem", color: "var(--muted)" }}><strong>Solución:</strong> {study.solution}</p>
-                  <div style={{ padding: "12px 16px", background: "rgba(255,255,255,0.03)", borderRadius: 12, border: "1px solid rgba(255,255,255,0.05)" }}>
-                    <p style={{ fontSize: "0.95rem", color: study.color }}><strong>Resultado:</strong> {study.result}</p>
+                  <p style={{ fontSize: "1.125rem", color: "var(--muted)" }}><strong>Desafío:</strong> {study.challenge}</p>
+                  <p style={{ fontSize: "1.125rem", color: "var(--muted)" }}><strong>Solución:</strong> {study.solution}</p>
+                  <div style={{ padding: "12px 16px", background: "var(--surface2)", borderRadius: 12, border: "1px solid var(--border)" }}>
+                    <p style={{ fontSize: "1.125rem", color: study.color }}><strong>Resultado:</strong> {study.result}</p>
                   </div>
                 </div>
               </div>

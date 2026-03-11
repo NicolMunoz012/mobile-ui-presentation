@@ -304,12 +304,12 @@ export default function Section2() {
                     gap: 12,
                   }}
                 >
-                  <span className="mono" style={{ color: activeHeuristic === i ? h.color : "var(--muted)", fontSize: "0.75rem", flexShrink: 0 }}>
+                  <span className="mono" style={{ color: activeHeuristic === i ? h.color : "var(--muted)", fontSize: "1rem", flexShrink: 0 }}>
                     {h.num}
                   </span>
                   <span
                     style={{
-                      fontSize: "0.9rem",
+                      fontSize: "1.125rem",
                       fontWeight: 500,
                       color: activeHeuristic === i ? "var(--text)" : "var(--muted)",
                     }}
@@ -382,7 +382,7 @@ export default function Section2() {
           <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8, color: "var(--text)" }}>
             Affordance
           </h3>
-          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ color: "var(--muted)", fontSize: "1.125rem", marginBottom: 20, lineHeight: 1.6 }}>
             La affordance es la propiedad percibida de un objeto que sugiere cómo usarlo. En móvil es crítica porque no hay cursor. El diseño visual asume toda la carga.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -414,7 +414,7 @@ export default function Section2() {
                 </div>
                 <p style={{ 
                   color: activeAffordance === i ? "var(--text)" : "var(--muted)", 
-                  fontSize: "0.85rem", 
+                  fontSize: "1.125rem", 
                   lineHeight: 1.6, 
                   marginBottom: 12,
                   transition: "color 0.3s",
@@ -434,10 +434,10 @@ export default function Section2() {
                     <div
                       key={ex}
                       style={{
-                        fontSize: "0.75rem",
+                        fontSize: "1rem",
                         color: "var(--muted)",
                         background: `${a.color}08`,
-                        padding: "6px 10px",
+                        padding: "8px 12px",
                         borderRadius: 6,
                         border: `1px solid ${a.color}20`,
                       }}
@@ -448,9 +448,9 @@ export default function Section2() {
                 </div>
                 {activeAffordance !== i && (
                   <div style={{ 
-                    fontSize: "0.7rem", 
+                    fontSize: "1rem", 
                     color: a.color, 
-                    fontFamily: "JetBrains Mono",
+                    fontFamily: "Fira Code",
                     marginTop: 8,
                     opacity: 0.6,
                   }}>
@@ -467,7 +467,7 @@ export default function Section2() {
           <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8, color: "var(--text)" }}>
             Feedback
           </h3>
-          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ color: "var(--muted)", fontSize: "1.125rem", marginBottom: 20, lineHeight: 1.6 }}>
             Cada acción debe tener respuesta del sistema. Tres niveles de feedback:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -481,7 +481,7 @@ export default function Section2() {
                   <h4 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.1rem", fontWeight: 700, color: f.color }}>
                     {f.level}
                   </h4>
-                  <span className="mono" style={{ fontSize: "0.7rem", color: f.color, background: `${f.color}15`, padding: "2px 8px", borderRadius: 4 }}>
+                  <span className="mono" style={{ fontSize: "1rem", color: f.color, background: `${f.color}15`, padding: "4px 10px", borderRadius: 4 }}>
                     {f.time}
                   </span>
                 </div>
@@ -490,10 +490,10 @@ export default function Section2() {
                     <div
                       key={ex}
                       style={{
-                        fontSize: "0.75rem",
+                        fontSize: "1rem",
                         color: "var(--muted)",
                         background: `${f.color}08`,
-                        padding: "6px 10px",
+                        padding: "8px 12px",
                         borderRadius: 6,
                         border: `1px solid ${f.color}20`,
                       }}
@@ -512,7 +512,7 @@ export default function Section2() {
           <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8, color: "var(--text)" }}>
             Consistencia
           </h3>
-          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ color: "var(--muted)", fontSize: "1.125rem", marginBottom: 20, lineHeight: 1.6 }}>
             Reduce la carga cognitiva: lo predecible libera al usuario para pensar en su objetivo. Cuatro dimensiones:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -525,7 +525,7 @@ export default function Section2() {
                 <h4 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.1rem", fontWeight: 700, color: c.color, marginBottom: 10 }}>
                   {c.dimension}
                 </h4>
-                <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.6 }}>
+                <p style={{ color: "var(--muted)", fontSize: "1.125rem", lineHeight: 1.6 }}>
                   {c.desc}
                 </p>
               </div>
@@ -542,13 +542,13 @@ export default function Section2() {
             {accessibility.map((a) => (
               <div key={a.label} className="card p-6 text-center" style={{ borderColor: `${a.color}30` }}>
                 <div style={{ fontSize: 32, marginBottom: 12 }}>{a.icon}</div>
-                <div style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 700, fontSize: "0.85rem", marginBottom: 8 }}>
+                <div style={{ fontFamily: "Cabinet Grotesk", fontWeight: 700, fontSize: "1rem", marginBottom: 8, color: "var(--text)" }}>
                   {a.label}
                 </div>
                 <div
                   className="mono"
                   style={{
-                    fontSize: "0.75rem",
+                    fontSize: "1rem",
                     color: a.color,
                     lineHeight: 1.6,
                     whiteSpace: "pre-line",
@@ -592,7 +592,7 @@ export default function Section2() {
                   >
                     WCAG {w.level}
                   </span>
-                  <p style={{ color: "var(--muted)", fontSize: "0.85rem", marginTop: 6, lineHeight: 1.5 }}>
+                  <p style={{ color: "var(--muted)", fontSize: "1.125rem", marginTop: 6, lineHeight: 1.5 }}>
                     {w.desc}
                   </p>
                 </div>
@@ -618,8 +618,8 @@ export default function Section2() {
                     border: `1px solid ${activeAriaExample === i ? ex.color : "rgba(255,255,255,0.08)"}`,
                     background: activeAriaExample === i ? `${ex.color}15` : "transparent",
                     color: activeAriaExample === i ? ex.color : "#6B6B8A",
-                    fontFamily: "JetBrains Mono",
-                    fontSize: "0.75rem",
+                    fontFamily: "Fira Code",
+                    fontSize: "1rem",
                     cursor: "pointer",
                     transition: "all 0.2s",
                     fontWeight: activeAriaExample === i ? 600 : 400,
@@ -632,7 +632,7 @@ export default function Section2() {
 
             {/* Code comparison */}
             <div className="card p-6" style={{ borderColor: `${ariaExamples[activeAriaExample].color}30` }}>
-              <p style={{ color: "var(--muted)", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: 16 }}>
+              <p style={{ color: "var(--muted)", fontSize: "1.125rem", lineHeight: 1.6, marginBottom: 16 }}>
                 {ariaExamples[activeAriaExample].explanation}
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -640,7 +640,7 @@ export default function Section2() {
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                     <span style={{ fontSize: "1.2rem" }}>❌</span>
-                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "0.75rem", color: "#f43f5e", fontWeight: 600 }}>
+                    <span style={{ fontFamily: "Fira Code", fontSize: "1rem", color: "#f43f5e", fontWeight: 600 }}>
                       Incorrecto
                     </span>
                   </div>
@@ -650,9 +650,9 @@ export default function Section2() {
                       border: "1px solid rgba(244,63,94,0.2)",
                       borderRadius: 8,
                       padding: "12px",
-                      fontSize: "0.7rem",
+                      fontSize: "1rem",
                       color: "#f43f5e",
-                      fontFamily: "JetBrains Mono",
+                      fontFamily: "Fira Code",
                       lineHeight: 1.6,
                       overflow: "auto",
                       margin: 0,
@@ -666,7 +666,7 @@ export default function Section2() {
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                     <span style={{ fontSize: "1.2rem" }}>✅</span>
-                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "0.75rem", color: "#10b981", fontWeight: 600 }}>
+                    <span style={{ fontFamily: "Fira Code", fontSize: "1rem", color: "#10b981", fontWeight: 600 }}>
                       Correcto
                     </span>
                   </div>
@@ -676,9 +676,9 @@ export default function Section2() {
                       border: "1px solid rgba(16,185,129,0.2)",
                       borderRadius: 8,
                       padding: "12px",
-                      fontSize: "0.7rem",
+                      fontSize: "1rem",
                       color: "#10b981",
-                      fontFamily: "JetBrains Mono",
+                      fontFamily: "Fira Code",
                       lineHeight: 1.6,
                       overflow: "auto",
                       margin: 0,
@@ -702,7 +702,7 @@ export default function Section2() {
                     className="card p-5"
                     style={{ borderColor: `${bp.color}25` }}
                   >
-                    <div style={{ fontFamily: "Plus Jakarta Sans", fontWeight: 700, fontSize: "0.9rem", color: bp.color, marginBottom: 8 }}>
+                    <div style={{ fontFamily: "Cabinet Grotesk", fontWeight: 700, fontSize: "1.125rem", color: bp.color, marginBottom: 8 }}>
                       {bp.practice}
                     </div>
                     <pre
@@ -710,10 +710,10 @@ export default function Section2() {
                         background: `${bp.color}08`,
                         border: `1px solid ${bp.color}15`,
                         borderRadius: 6,
-                        padding: "8px",
-                        fontSize: "0.65rem",
+                        padding: "10px",
+                        fontSize: "1rem",
                         color: bp.color,
-                        fontFamily: "JetBrains Mono",
+                        fontFamily: "Fira Code",
                         lineHeight: 1.5,
                         overflow: "auto",
                         marginBottom: 8,
@@ -722,7 +722,7 @@ export default function Section2() {
                     >
                       {bp.code}
                     </pre>
-                    <p style={{ color: "var(--muted)", fontSize: "0.75rem", lineHeight: 1.5 }}>
+                    <p style={{ color: "var(--muted)", fontSize: "1rem", lineHeight: 1.5 }}>
                       {bp.desc}
                     </p>
                   </div>
@@ -737,7 +737,7 @@ export default function Section2() {
           <h3 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.4rem", fontWeight: 700, marginBottom: 8, color: "var(--text)" }}>
             Diseño Inclusivo
           </h3>
-          <p style={{ color: "var(--muted)", fontSize: "0.9rem", marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ color: "var(--muted)", fontSize: "1.125rem", marginBottom: 20, lineHeight: 1.6 }}>
             No existe el &quot;usuario promedio&quot;. Principios clave para diseñar para todos:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -750,15 +750,15 @@ export default function Section2() {
                 <h4 style={{ fontFamily: "Plus Jakarta Sans", fontSize: "1.1rem", fontWeight: 700, color: d.color, marginBottom: 10 }}>
                   {d.principle}
                 </h4>
-                <p style={{ color: "var(--muted)", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: 10 }}>
+                <p style={{ color: "var(--muted)", fontSize: "1.125rem", lineHeight: 1.6, marginBottom: 10 }}>
                   {d.desc}
                 </p>
                 <div
                   style={{
-                    fontSize: "0.75rem",
+                    fontSize: "1rem",
                     color: d.color,
                     background: `${d.color}08`,
-                    padding: "8px 12px",
+                    padding: "10px 14px",
                     borderRadius: 6,
                     border: `1px solid ${d.color}20`,
                     fontStyle: "italic",

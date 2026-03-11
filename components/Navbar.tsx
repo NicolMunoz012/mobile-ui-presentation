@@ -16,6 +16,11 @@ export default function Navbar() {
   const [active, setActive] = useState("");
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -102,26 +107,28 @@ export default function Navbar() {
         {/* Theme toggle + Tag */}
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           {/* Theme toggle button */}
-          <button
-            onClick={toggleTheme}
-            style={{
-              width: 36,
-              height: 36,
-              borderRadius: "50%",
-              border: "1px solid var(--border)",
-              background: "var(--surface)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-              fontSize: "1.1rem",
-            }}
-            aria-label={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
-            title={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
-          >
-            {theme === "dark" ? "☀️" : "🌙"}
-          </button>
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              style={{
+                width: 36,
+                height: 36,
+                borderRadius: "50%",
+                border: "1px solid var(--border)",
+                background: "var(--surface)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                fontSize: "1.1rem",
+              }}
+              aria-label={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
+              title={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
+            >
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
+          )}
 
           {/* Tag */}
           <div
