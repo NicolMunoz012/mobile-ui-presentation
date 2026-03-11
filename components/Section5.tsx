@@ -368,7 +368,14 @@ export default function Section5() {
             ))}
           </div>
 
-          <div className="card p-8" style={{ borderColor: `${processSteps[activeStep].color}30`, background: "rgba(13,13,20,0.4)" }}>
+          <div 
+            className="card p-8" 
+            style={{ 
+              borderColor: `var(--border)`,
+              background: `var(--surface)`,
+              border: "1px solid var(--border)"
+            }}
+          >
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
@@ -413,9 +420,6 @@ export default function Section5() {
               </div>
 
               <div style={{ background: "var(--surface)", borderRadius: 20, padding: 32, border: "1px solid var(--border)" }}>
-                <div style={{ fontSize: "1rem", fontFamily: "Fira Code", color: "var(--muted)", marginBottom: 20, textAlign: "right" }}>
-                  OUTPUTS_AND_BEST_PRACTICES.log
-                </div>
                 
                 <div style={{ marginBottom: 32 }}>
                   <h5 style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text)", marginBottom: 16 }}>Entregables Clave:</h5>
@@ -427,7 +431,7 @@ export default function Section5() {
                         border: "1px solid var(--border)",
                         display: "flex", alignItems: "center", gap: 10
                       }}>
-                        <span style={{ color: processSteps[activeStep].color }}>📄</span> {d}
+                        <span style={{ color: processSteps[activeStep].color, fontFamily: "Fira Code" }}>#</span> {d}
                       </div>
                     ))}
                   </div>
@@ -437,12 +441,19 @@ export default function Section5() {
                   <h5 style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text)", marginBottom: 16 }}>Mejores Prácticas:</h5>
                   <div className="space-y-3">
                     {processSteps[activeStep].bestPractices.map((bp) => (
-                      <div key={bp} style={{ 
-                        padding: "12px 18px", borderRadius: 10, fontSize: "1.125rem",
-                        background: `${processSteps[activeStep].color}08`, color: "var(--text)",
-                        borderLeft: `3px solid ${processSteps[activeStep].color}`
+                      <div key={bp} style={{
+                        padding: "12px 18px",
+                        borderRadius: 12,
+                        fontSize: "1.125rem",
+                        background: "var(--surface2)",
+                        color: "var(--muted)",
+                        border: "1px solid var(--border)",
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 12
                       }}>
-                        {bp}
+                        <span style={{ color: processSteps[activeStep].color, fontSize: '1.2rem' }}>›</span>
+                        <span>{bp}</span>
                       </div>
                     ))}
                   </div>
